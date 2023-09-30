@@ -1,0 +1,3 @@
+/Users/alicee/CLionProjects/HW1/cmake-build-debug/CMakeFiles/HW1.dir
+/Users/alicee/CLionProjects/HW1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/alicee/CLionProjects/HW1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
