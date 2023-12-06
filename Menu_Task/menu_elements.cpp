@@ -6,5 +6,5 @@
 // title; (*itemfunction); *parent; *children; children_count;
 
 const alicee::MenuItem alicee::MAIN_LEVEL0{
-    "Top lev", menu_function, nullptr, nullptr, 0
+    "Top lev", element_show_menu, nullptr, nullptr, 2
 };

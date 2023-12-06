@@ -6,4 +6,4 @@
 
 
 //const MenuItem* show_menu(const MenuItem* current);
-const alicee::MenuItem* menu_function(const alicee::MenuItem *current);
+const alicee::MenuItem* element_show_menu(const alicee::MenuItem *current);
