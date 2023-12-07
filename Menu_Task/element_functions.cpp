@@ -12,6 +12,8 @@ const alicee::MenuItem* ::element_show_menu(const alicee::MenuItem* current){
         std::cout << i+1 << " - " << current->children[i]->title << std::endl;
     }
     std::cout << "Выберите пункт меню: ";
+
+    //TODO : User's wrong input capture
     int n;
     std::cin >> n;
     if(n==0){
@@ -19,11 +21,12 @@ const alicee::MenuItem* ::element_show_menu(const alicee::MenuItem* current){
             std::cout << "Завершение программы!" << std::endl;
             std::exit(0); // return 0 - возвращает signal 11: SIGSEGV
         }else{
-            std::cout << "Возврат на уровень выше" << std::endl;
+            std::cout << "Возврат на уровень выше" << std::endl << std::endl;
             return current->parent;
         }
     }
-    std::cout << std::endl << current->children[n]->title << std::endl;
-    return current->children[n];
+    //std::cout << std::endl << current->children[n-1]->title << std::endl;
+    std::cout << std::endl;
+    return current->children[n-1];
 };
 
