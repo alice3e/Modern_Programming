@@ -9,5 +9,6 @@
 
 namespace alicee{
     const extern MenuItem MAIN_LEVEL0;
-
+    const extern MenuItem ALGEBRA_LEVEL1;
+    const extern MenuItem MATHAN_LEVEL1;
 }

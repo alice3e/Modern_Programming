@@ -8,7 +8,7 @@
 
 int main() {
     std::setlocale(LC_ALL, "");
-
+    std::cout << "Добро Пожаловать в программу обучения балбесов!\n";
     const alicee::MenuItem *current = &alicee::MAIN_LEVEL0;
 
     do {
