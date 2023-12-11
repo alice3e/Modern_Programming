@@ -6,11 +6,14 @@
 #include "menu.h"
 
 
-//const MenuItem* show_menu(const MenuItem* current);
-const alicee::MenuItem *element_show_menu(const alicee::MenuItem *current);
+namespace MenuFunctions{
 
-const alicee::MenuItem *algebra_show_menu(const alicee::MenuItem *current);
+    const alicee::MenuItem *element_show_menu(const alicee::MenuItem *current);
 
-const alicee::MenuItem *mathan_show_menu(const alicee::MenuItem *current);
+    const alicee::MenuItem *algebra_show_menu(const alicee::MenuItem *current);
 
-const alicee::MenuItem *global_show_menu(const alicee::MenuItem *current);
+    const alicee::MenuItem *mathan_show_menu(const alicee::MenuItem *current);
+
+    const alicee::MenuItem *global_show_menu(const alicee::MenuItem *current);
+
+}

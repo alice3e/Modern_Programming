@@ -1,11 +1,8 @@
-
-// Created by alicee on 06.12.2023.
-//
 #include "element_functions.h"
 #include <iostream>
 //const IBusko::MenuItem* IBusko::show_menu(const MenuItem* current)
 
-const alicee::MenuItem *::global_show_menu(const alicee::MenuItem *current) {
+const alicee::MenuItem *MenuFunctions::global_show_menu(const alicee::MenuItem *current) {
     std::cout << "0 - вернутся на уровень выше / выйти из программы" << std::endl;
     for (int i = 0; i < current->children_count; i++) {
         std::cout << i + 1 << " - " << current->children[i]->title << std::endl;
@@ -32,13 +29,13 @@ const alicee::MenuItem *::global_show_menu(const alicee::MenuItem *current) {
     return current->children[n - 1];
 }
 
-const alicee::MenuItem *::element_show_menu(const alicee::MenuItem *current) {
+const alicee::MenuItem *MenuFunctions::element_show_menu(const alicee::MenuItem *current) {
     std::cout << current->title << ": " << std::endl;
 
     return global_show_menu(current);
 };
 
-const alicee::MenuItem *::algebra_show_menu(const alicee::MenuItem *current) {
+const alicee::MenuItem *MenuFunctions::algebra_show_menu(const alicee::MenuItem *current) {
     std::cout << current->title << ": " << std::endl;
 
     std::cout << "Скопируйте и откройте данную ссылку в браузере!" << std::endl;
@@ -57,7 +54,7 @@ const alicee::MenuItem *::algebra_show_menu(const alicee::MenuItem *current) {
     return global_show_menu(current);
 };
 
-const alicee::MenuItem *::mathan_show_menu(const alicee::MenuItem *current) {
+const alicee::MenuItem *MenuFunctions::mathan_show_menu(const alicee::MenuItem *current) {
     std::cout << current->title << ": " << std::endl;
 
     std::cout << "Скопируйте и откройте данную ссылку в браузере!" << std::endl;
