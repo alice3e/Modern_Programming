@@ -36,38 +36,8 @@ const alicee::MenuItem *MenuFunctions::show_element_menu(const alicee::MenuItem 
     return show_global_menu(current);
 };
 
-const alicee::MenuItem *MenuFunctions::show_algebra_menu(const alicee::MenuItem *current) {
+const alicee::MenuItem *MenuFunctions::show_element_with_link_menu(const alicee::MenuItem *current) {
     std::cout << current->title << ": " << std::endl;
-
-    std::cout << "Скопируйте и откройте данную ссылку в браузере!" << std::endl;
-    if (current->title == "Хочу научиться складывать!") {
-        std::cout << "https://resh.edu.ru/subject/lesson/6865/conspect/236927/" << std::endl;
-    } else if (current->title == "Хочу научиться вычитать!") {
-        std::cout << "https://skysmart.ru/articles/mathematic/vychitanie-stolbikom" << std::endl;
-    } else if (current->title == "Хочу научиться делить!") {
-        std::cout << "http://spacemath.xyz/delenie/" << std::endl;
-    } else if (current->title == "Хочу научиться умножать!") {
-        std::cout << "https://skysmart.ru/articles/mathematic/umnozhenie-v-stolbik" << std::endl;
-    } else {
-        std::cout << "произошла ошибка, просьба написать tg @alice3e" << std::endl;
-    }
-
-    return show_global_menu(current);
-};
-
-const alicee::MenuItem *MenuFunctions::show_mathan_menu(const alicee::MenuItem *current) {
-    std::cout << current->title << ": " << std::endl;
-
-    std::cout << "Скопируйте и откройте данную ссылку в браузере!" << std::endl;
-    if (current->title == "Хочу изучить дифференциальное исчисление!") {
-        std::cout
-                << "https://hti.urfu.ru/fileadmin/user_upload/site_15078/dokumenty/zaochniki/2_matem_analiz_funkcii_odnoi_peremennoi.pdf"
-                << std::endl;
-    } else if (current->title == "Хочу изучить интегральное исчисление!") {
-        std::cout << "https://www.booksite.ru/fulltext/1/001/008/055/368.htm" << std::endl;
-    } else {
-        std::cout << "произошла ошибка, просьба написать tg @alice3e" << std::endl;
-    }
-
+    std::cout << "Вся Информация по ссылке!" << std::endl << current->information_link << std::endl;
     return show_global_menu(current);
 };
