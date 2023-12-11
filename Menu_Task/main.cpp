@@ -12,7 +12,8 @@ int main() {
     const alicee::MenuItem *current = &alicee::MAIN_LEVEL0;
 
     do {
-        current = current->itemfunction(current); // Выглядит максимально криво.
+        current = current->itemfunction(current);
+        // Выглядит максимально криво.
         // если писать через класс, то можно просто использовать self и не передавать current в func()
     } while (true);
 
