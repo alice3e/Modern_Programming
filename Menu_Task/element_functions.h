@@ -8,12 +8,12 @@
 
 namespace MenuFunctions{
 
-    const alicee::MenuItem *element_show_menu(const alicee::MenuItem *current);
+    const alicee::MenuItem *show_element_menu(const alicee::MenuItem *current);
 
-    const alicee::MenuItem *algebra_show_menu(const alicee::MenuItem *current);
+    const alicee::MenuItem *show_algebra_menu(const alicee::MenuItem *current);
 
-    const alicee::MenuItem *mathan_show_menu(const alicee::MenuItem *current);
+    const alicee::MenuItem *show_mathan_menu(const alicee::MenuItem *current);
 
-    const alicee::MenuItem *global_show_menu(const alicee::MenuItem *current);
+    const alicee::MenuItem *show_global_menu(const alicee::MenuItem *current);
 
 }

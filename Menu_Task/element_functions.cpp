@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-const alicee::MenuItem *MenuFunctions::global_show_menu(const alicee::MenuItem *current) {
+const alicee::MenuItem *MenuFunctions::show_global_menu(const alicee::MenuItem *current) {
     std::cout << "0 - вернутся на уровень выше / выйти из программы" << std::endl;
     for (int i = 0; i < current->children_count; i++) {
         std::cout << i + 1 << " - " << current->children[i]->title << std::endl;
@@ -29,13 +29,13 @@ const alicee::MenuItem *MenuFunctions::global_show_menu(const alicee::MenuItem *
     return current->children[n - 1];
 }
 
-const alicee::MenuItem *MenuFunctions::element_show_menu(const alicee::MenuItem *current) {
+const alicee::MenuItem *MenuFunctions::show_element_menu(const alicee::MenuItem *current) {
     std::cout << current->title << ": " << std::endl;
 
-    return global_show_menu(current);
+    return show_global_menu(current);
 };
 
-const alicee::MenuItem *MenuFunctions::algebra_show_menu(const alicee::MenuItem *current) {
+const alicee::MenuItem *MenuFunctions::show_algebra_menu(const alicee::MenuItem *current) {
     std::cout << current->title << ": " << std::endl;
 
     std::cout << "Скопируйте и откройте данную ссылку в браузере!" << std::endl;
@@ -51,10 +51,10 @@ const alicee::MenuItem *MenuFunctions::algebra_show_menu(const alicee::MenuItem 
         std::cout << "произошла ошибка, просьба написать tg @alice3e" << std::endl;
     }
 
-    return global_show_menu(current);
+    return show_global_menu(current);
 };
 
-const alicee::MenuItem *MenuFunctions::mathan_show_menu(const alicee::MenuItem *current) {
+const alicee::MenuItem *MenuFunctions::show_mathan_menu(const alicee::MenuItem *current) {
     std::cout << current->title << ": " << std::endl;
 
     std::cout << "Скопируйте и откройте данную ссылку в браузере!" << std::endl;
@@ -68,5 +68,5 @@ const alicee::MenuItem *MenuFunctions::mathan_show_menu(const alicee::MenuItem *
         std::cout << "произошла ошибка, просьба написать tg @alice3e" << std::endl;
     }
 
-    return global_show_menu(current);
+    return show_global_menu(current);
 };

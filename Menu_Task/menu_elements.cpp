@@ -34,39 +34,39 @@ namespace algebra_children {
 }
 
 const alicee::MenuItem alicee::MAIN_LEVEL0{
-        "Главное Меню", MenuFunctions::element_show_menu, nullptr, main_children::children, 1
+        "Главное Меню", MenuFunctions::show_element_menu, nullptr, main_children::children, 1
 };
 
 const alicee::MenuItem alicee::SUBJECT_CHOICE_LEVEL1{
-        "Меню программ обучения", MenuFunctions::element_show_menu, &MAIN_LEVEL0, main_education_children::children, 2
+        "Меню программ обучения", MenuFunctions::show_element_menu, &MAIN_LEVEL0, main_education_children::children, 2
 };
 
 const alicee::MenuItem alicee::ALGEBRA_LEVEL2{
-        "Меню изучения Алгебры", MenuFunctions::element_show_menu, &SUBJECT_CHOICE_LEVEL1, algebra_children::children, 4
+        "Меню изучения Алгебры", MenuFunctions::show_element_menu, &SUBJECT_CHOICE_LEVEL1, algebra_children::children, 4
 };
 
 const alicee::MenuItem alicee::MATHAN_LEVEL2{
-        "Меню изучения МатАнализа", MenuFunctions::element_show_menu, &SUBJECT_CHOICE_LEVEL1, mathan_children::children, 2
+        "Меню изучения МатАнализа", MenuFunctions::show_element_menu, &SUBJECT_CHOICE_LEVEL1, mathan_children::children, 2
 };
 
 
 const alicee::MenuItem alicee::ALGEBRA_LEVEL3_1{
-        "Хочу научиться складывать!", MenuFunctions::algebra_show_menu, &ALGEBRA_LEVEL2, nullptr, 0
+        "Хочу научиться складывать!", MenuFunctions::show_algebra_menu, &ALGEBRA_LEVEL2, nullptr, 0
 };
 const alicee::MenuItem alicee::ALGEBRA_LEVEL3_2{
-        "Хочу научиться вычитать!", MenuFunctions::algebra_show_menu, &ALGEBRA_LEVEL2, nullptr, 0
+        "Хочу научиться вычитать!", MenuFunctions::show_algebra_menu, &ALGEBRA_LEVEL2, nullptr, 0
 };
 const alicee::MenuItem alicee::ALGEBRA_LEVEL3_3{
-        "Хочу научиться делить!", MenuFunctions::algebra_show_menu, &ALGEBRA_LEVEL2, nullptr, 0
+        "Хочу научиться делить!", MenuFunctions::show_algebra_menu, &ALGEBRA_LEVEL2, nullptr, 0
 };
 const alicee::MenuItem alicee::ALGEBRA_LEVEL3_4{
-        "Хочу научиться умножать!", MenuFunctions::algebra_show_menu, &ALGEBRA_LEVEL2, nullptr, 0
+        "Хочу научиться умножать!", MenuFunctions::show_algebra_menu, &ALGEBRA_LEVEL2, nullptr, 0
 };
 
 
 const alicee::MenuItem alicee::MATHAN_LEVEL3_1{
-        "Хочу изучить дифференциальное исчисление!", MenuFunctions::mathan_show_menu, &MATHAN_LEVEL2, nullptr, 0
+        "Хочу изучить дифференциальное исчисление!", MenuFunctions::show_mathan_menu, &MATHAN_LEVEL2, nullptr, 0
 };
 const alicee::MenuItem alicee::MATHAN_LEVEL3_2{
-        "Хочу изучить интегральное исчисление!", MenuFunctions::mathan_show_menu, &MATHAN_LEVEL2, nullptr, 0
+        "Хочу изучить интегральное исчисление!", MenuFunctions::show_mathan_menu, &MATHAN_LEVEL2, nullptr, 0
 };
