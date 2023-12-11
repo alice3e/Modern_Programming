@@ -1,14 +1,14 @@
 #include "element_functions.h"
 #include <iostream>
-//const IBusko::MenuItem* IBusko::show_menu(const MenuItem* current)
+
 
 const alicee::MenuItem *MenuFunctions::global_show_menu(const alicee::MenuItem *current) {
     std::cout << "0 - вернутся на уровень выше / выйти из программы" << std::endl;
     for (int i = 0; i < current->children_count; i++) {
         std::cout << i + 1 << " - " << current->children[i]->title << std::endl;
     }
-    std::cout << "Выберите пункт меню: ";
 
+    std::cout << "Выберите пункт меню: ";
     int n;
     do {
         std::cin >> n;
@@ -24,8 +24,8 @@ const alicee::MenuItem *MenuFunctions::global_show_menu(const alicee::MenuItem *
             return current->parent;
         }
     }
-
     std::cout << std::endl;
+
     return current->children[n - 1];
 }
 

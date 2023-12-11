@@ -1,9 +1,12 @@
 #include "menu_elements.h"
 #include "element_functions.h"
 
+// STRUCT:
+// level0 -> level1 -> .... -> levelN
+
 namespace main_children {
     const alicee::MenuItem *const children[] = {
-            &alicee::MAIN_LEVEL1
+            &alicee::SUBJECT_CHOICE_LEVEL1
     };
 }
 
@@ -34,16 +37,16 @@ const alicee::MenuItem alicee::MAIN_LEVEL0{
         "Главное Меню", MenuFunctions::element_show_menu, nullptr, main_children::children, 1
 };
 
-const alicee::MenuItem alicee::MAIN_LEVEL1{
+const alicee::MenuItem alicee::SUBJECT_CHOICE_LEVEL1{
         "Меню программ обучения", MenuFunctions::element_show_menu, &MAIN_LEVEL0, main_education_children::children, 2
 };
 
 const alicee::MenuItem alicee::ALGEBRA_LEVEL2{
-        "Меню изучения Алгебры", MenuFunctions::element_show_menu, &MAIN_LEVEL1, algebra_children::children, 4
+        "Меню изучения Алгебры", MenuFunctions::element_show_menu, &SUBJECT_CHOICE_LEVEL1, algebra_children::children, 4
 };
 
 const alicee::MenuItem alicee::MATHAN_LEVEL2{
-        "Меню изучения МатАнализа", MenuFunctions::element_show_menu, &MAIN_LEVEL1, mathan_children::children, 2
+        "Меню изучения МатАнализа", MenuFunctions::element_show_menu, &SUBJECT_CHOICE_LEVEL1, mathan_children::children, 2
 };
 
 
