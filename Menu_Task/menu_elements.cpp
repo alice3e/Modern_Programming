@@ -18,15 +18,15 @@ const alicee::MenuItem alicee::ALGEBRA_LEVEL3_3{
 const alicee::MenuItem alicee::ALGEBRA_LEVEL3_4{
         "Хочу научиться умножать!", algebra_show_menu, &ALGEBRA_LEVEL2, nullptr, 0
 };
-namespace mathan_children{
-    const alicee::MenuItem* const children[] = {
+namespace mathan_children {
+    const alicee::MenuItem *const children[] = {
             &alicee::MATHAN_LEVEL3_1,
             &alicee::MATHAN_LEVEL3_2
     };
 }
 
-namespace algebra_children{
-    const alicee::MenuItem* const children[] = {
+namespace algebra_children {
+    const alicee::MenuItem *const children[] = {
             &alicee::ALGEBRA_LEVEL3_1,
             &alicee::ALGEBRA_LEVEL3_2,
             &alicee::ALGEBRA_LEVEL3_3,
@@ -50,15 +50,15 @@ const alicee::MenuItem alicee::MATHAN_LEVEL2{
         "Меню изучения МатАнализа", element_show_menu, &MAIN_LEVEL1, mathan_children::children, 2
 };
 
-namespace main_education_children{
-    const alicee::MenuItem* const children[] = {
+namespace main_education_children {
+    const alicee::MenuItem *const children[] = {
             &alicee::ALGEBRA_LEVEL2,
             &alicee::MATHAN_LEVEL2
     };
 }
 
-namespace main_children{
-    const alicee::MenuItem* const children[] = {
+namespace main_children {
+    const alicee::MenuItem *const children[] = {
             &alicee::MAIN_LEVEL1
     };
 }
