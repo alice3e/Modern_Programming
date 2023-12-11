@@ -5,6 +5,7 @@
 #include "menu_elements.h"
 #include "element_functions.h"
 
+
 int main() {
     std::setlocale(LC_ALL, "");
     std::cout << "Добро Пожаловать в программу обучения балбесов!\n";

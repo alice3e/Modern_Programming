@@ -1,10 +1,6 @@
-//
-// Created by alicee on 06.12.2023.
-//
 #pragma once
 
 #include "menu.h"
-
 
 
 namespace alicee {
