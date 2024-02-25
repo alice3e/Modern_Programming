@@ -1,0 +1,3 @@
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/tests/cmake-build-debug/CMakeFiles/RUN_hw1_tests.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/tests/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/tests/cmake-build-debug/CMakeFiles/rebuild_cache.dir

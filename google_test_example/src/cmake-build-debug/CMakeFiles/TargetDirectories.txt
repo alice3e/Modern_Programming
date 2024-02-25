@@ -1,0 +1,3 @@
+/Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/src/cmake-build-debug/CMakeFiles/some_lib.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/src/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
