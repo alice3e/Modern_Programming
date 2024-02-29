@@ -1,7 +1,7 @@
 //
 // Created by alicee on 25.02.2024.
 //
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 #include "code_example.hpp"
 
 TEST(NAME_OF_GROUP_TEST, test1){

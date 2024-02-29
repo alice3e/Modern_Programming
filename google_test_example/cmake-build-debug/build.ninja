@@ -41,37 +41,37 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target google_test_example
+# Object build statements for EXECUTABLE target google_test_example_run
 
 
 #############################################
-# Order-only phony target for google_test_example
+# Order-only phony target for google_test_example_run
 
-build cmake_object_order_depends_target_google_test_example: phony || cmake_object_order_depends_target_some_lib
+build cmake_object_order_depends_target_google_test_example_run: phony || cmake_object_order_depends_target_some_lib
 
-build CMakeFiles/google_test_example.dir/main.cpp.o: CXX_COMPILER__google_test_example_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/main.cpp || cmake_object_order_depends_target_google_test_example
-  DEP_FILE = CMakeFiles/google_test_example.dir/main.cpp.o.d
+build CMakeFiles/google_test_example_run.dir/main.cpp.o: CXX_COMPILER__google_test_example_run_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/main.cpp || cmake_object_order_depends_target_google_test_example_run
+  DEP_FILE = CMakeFiles/google_test_example_run.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/src
-  OBJECT_DIR = CMakeFiles/google_test_example.dir
-  OBJECT_FILE_DIR = CMakeFiles/google_test_example.dir
+  OBJECT_DIR = CMakeFiles/google_test_example_run.dir
+  OBJECT_FILE_DIR = CMakeFiles/google_test_example_run.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target google_test_example
+# Link build statements for EXECUTABLE target google_test_example_run
 
 
 #############################################
-# Link the executable google_test_example
+# Link the executable google_test_example_run
 
-build google_test_example: CXX_EXECUTABLE_LINKER__google_test_example_Debug CMakeFiles/google_test_example.dir/main.cpp.o | src/libsome_lib.a || src/libsome_lib.a
+build google_test_example_run: CXX_EXECUTABLE_LINKER__google_test_example_run_Debug CMakeFiles/google_test_example_run.dir/main.cpp.o | src/libsome_lib.a || src/libsome_lib.a
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = src/libsome_lib.a
-  OBJECT_DIR = CMakeFiles/google_test_example.dir
+  OBJECT_DIR = CMakeFiles/google_test_example_run.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = google_test_example
-  TARGET_PDB = google_test_example.dbg
+  TARGET_FILE = google_test_example_run
+  TARGET_PDB = google_test_example_run.dbg
 
 
 #############################################
@@ -719,7 +719,7 @@ build test_dir_run: phony GT/test_dir_run
 #############################################
 # Folder: /Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/cmake-build-debug
 
-build all: phony google_test_example src/all GT/all
+build all: phony google_test_example_run src/all GT/all
 
 # =============================================================================
 

@@ -150,7 +150,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Project
+CMAKE_PROJECT_NAME:STATIC=intr_sort
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ranlib
@@ -228,6 +228,15 @@ Project_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src
+
+//Value Computed by CMake
+intr_sort_BINARY_DIR:STATIC=/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src/cmake-build-debug
+
+//Value Computed by CMake
+intr_sort_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+intr_sort_SOURCE_DIR:STATIC=/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src
 
 
 ########################

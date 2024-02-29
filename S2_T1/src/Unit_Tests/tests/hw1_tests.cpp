@@ -1,4 +1,6 @@
 
-#include "lib/gtest"
 
-int main(){}
+
+int main(){
+    int x(5);
+}

@@ -1,4 +1,4 @@
-/Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/cmake-build-debug/CMakeFiles/google_test_example.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/cmake-build-debug/CMakeFiles/google_test_example_run.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/google_test_example/cmake-build-debug/CMakeFiles/list_install_components.dir

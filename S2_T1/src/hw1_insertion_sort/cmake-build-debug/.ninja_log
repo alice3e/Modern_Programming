@@ -5,3 +5,6 @@
 3	729	1708461179304431319	CMakeFiles/HW1_insertion_sort.dir/src/intr_sort.cpp.o	4e64fb30fee44ab9
 0	774	1708339060985265547	CMakeFiles/HW1_insertion_sort.dir/intr_sort.cpp.o	ee0f5d4244b2315b
 3	60	1708460842387371329	CMakeFiles/HW1_insertion_sort.dir/src/busko.cpp.o	d6b2ec80429647d9
+3	735	1709205223114303941	src/CMakeFiles/hw1_lib.dir/intr_sort.cpp.o	a4d4bf8b0b00c5f9
+735	799	1709205223182985000	src/libhw1_lib.a	f4f2590e1be3139b
+799	892	1709205223274115414	HW1_insertion_sort	169191b827f85fb7

@@ -47,7 +47,7 @@ cmake_ninja_workdir = /Users/alicee/Desktop/конспекты/Современ�
 #############################################
 # Order-only phony target for HW1_insertion_sort
 
-build cmake_object_order_depends_target_HW1_insertion_sort: phony || CMakeFiles/HW1_insertion_sort.dir
+build cmake_object_order_depends_target_HW1_insertion_sort: phony || cmake_object_order_depends_target_hw1_lib
 
 build CMakeFiles/HW1_insertion_sort.dir/main.cpp.o: CXX_COMPILER__HW1_insertion_sort_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/main.cpp || cmake_object_order_depends_target_HW1_insertion_sort
   DEP_FILE = CMakeFiles/HW1_insertion_sort.dir/main.cpp.o.d
@@ -55,13 +55,6 @@ build CMakeFiles/HW1_insertion_sort.dir/main.cpp.o: CXX_COMPILER__HW1_insertion_
   INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src
   OBJECT_DIR = CMakeFiles/HW1_insertion_sort.dir
   OBJECT_FILE_DIR = CMakeFiles/HW1_insertion_sort.dir
-
-build CMakeFiles/HW1_insertion_sort.dir/src/intr_sort.cpp.o: CXX_COMPILER__HW1_insertion_sort_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src/intr_sort.cpp || cmake_object_order_depends_target_HW1_insertion_sort
-  DEP_FILE = CMakeFiles/HW1_insertion_sort.dir/src/intr_sort.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src
-  OBJECT_DIR = CMakeFiles/HW1_insertion_sort.dir
-  OBJECT_FILE_DIR = CMakeFiles/HW1_insertion_sort.dir/src
 
 
 # =============================================================================
@@ -71,8 +64,9 @@ build CMakeFiles/HW1_insertion_sort.dir/src/intr_sort.cpp.o: CXX_COMPILER__HW1_i
 #############################################
 # Link the executable HW1_insertion_sort
 
-build HW1_insertion_sort: CXX_EXECUTABLE_LINKER__HW1_insertion_sort_Debug CMakeFiles/HW1_insertion_sort.dir/main.cpp.o CMakeFiles/HW1_insertion_sort.dir/src/intr_sort.cpp.o
+build HW1_insertion_sort: CXX_EXECUTABLE_LINKER__HW1_insertion_sort_Debug CMakeFiles/HW1_insertion_sort.dir/main.cpp.o | src/libhw1_lib.a || src/libhw1_lib.a
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LINK_LIBRARIES = src/libhw1_lib.a
   OBJECT_DIR = CMakeFiles/HW1_insertion_sort.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -107,6 +101,39 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/CMakeLists.txt
 # =============================================================================
 
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target hw1_lib
+
+
+#############################################
+# Order-only phony target for hw1_lib
+
+build cmake_object_order_depends_target_hw1_lib: phony || src/CMakeFiles/hw1_lib.dir
+
+build src/CMakeFiles/hw1_lib.dir/intr_sort.cpp.o: CXX_COMPILER__hw1_lib_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src/intr_sort.cpp || cmake_object_order_depends_target_hw1_lib
+  DEP_FILE = src/CMakeFiles/hw1_lib.dir/intr_sort.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src
+  OBJECT_DIR = src/CMakeFiles/hw1_lib.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/hw1_lib.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target hw1_lib
+
+
+#############################################
+# Link the static library src/libhw1_lib.a
+
+build src/libhw1_lib.a: CXX_STATIC_LIBRARY_LINKER__hw1_lib_Debug src/CMakeFiles/hw1_lib.dir/intr_sort.cpp.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src/CMakeFiles/hw1_lib.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/libhw1_lib.a
+  TARGET_PDB = hw1_lib.a.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -133,6 +160,10 @@ build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build hw1_lib: phony src/libhw1_lib.a
+
+build libhw1_lib.a: phony src/libhw1_lib.a
+
 # =============================================================================
 # Folder targets.
 
@@ -148,7 +179,7 @@ build all: phony HW1_insertion_sort src/all
 #############################################
 # Folder: /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/cmake-build-debug/src
 
-build src/all: phony
+build src/all: phony src/libhw1_lib.a
 
 # =============================================================================
 # Built-in targets

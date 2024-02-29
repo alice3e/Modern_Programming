@@ -219,6 +219,15 @@ HW1_insertion_sort_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 HW1_insertion_sort_SOURCE_DIR:STATIC=/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort
 
+//Value Computed by CMake
+intr_sort_BINARY_DIR:STATIC=/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/cmake-build-debug/src
+
+//Value Computed by CMake
+intr_sort_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+intr_sort_SOURCE_DIR:STATIC=/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src
+
 
 ########################
 # INTERNAL cache entries
