@@ -316,6 +316,9 @@ HW1_insertion_sort_SOURCE_DIR:STATIC=/Users/alicee/Desktop/конспекты/С
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
 
+//Path to a file.
+LIB_INCLUDES:PATH=/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src
+
 //Value Computed by CMake
 Menu_Task_BINARY_DIR:STATIC=/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/menu_task
 

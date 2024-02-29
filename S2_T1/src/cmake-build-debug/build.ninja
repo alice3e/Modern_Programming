@@ -134,7 +134,7 @@ build cmake_object_order_depends_target_hw1_test_run: phony || cmake_object_orde
 build Unit_Tests/CMakeFiles/hw1_test_run.dir/hw1_tests.cpp.o: CXX_COMPILER__hw1_test_run_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/hw1_tests.cpp || cmake_object_order_depends_target_hw1_test_run
   DEP_FILE = Unit_Tests/CMakeFiles/hw1_test_run.dir/hw1_tests.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/../src -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/include -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest
+  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/include -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest
   OBJECT_DIR = Unit_Tests/CMakeFiles/hw1_test_run.dir
   OBJECT_FILE_DIR = Unit_Tests/CMakeFiles/hw1_test_run.dir
 
@@ -331,7 +331,7 @@ build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depen
 build Unit_Tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: CXX_COMPILER__gmock_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
   DEP_FILE = Unit_Tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d
   FLAGS = -g -std=c++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
-  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/include -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/include -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest
+  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/include -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/include -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest
   OBJECT_DIR = Unit_Tests/lib/googlemock/CMakeFiles/gmock.dir
   OBJECT_FILE_DIR = Unit_Tests/lib/googlemock/CMakeFiles/gmock.dir/src
 
@@ -364,7 +364,7 @@ build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_
 build Unit_Tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: CXX_COMPILER__gmock_main_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
   DEP_FILE = Unit_Tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d
   FLAGS = -g -std=c++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
-  INCLUDES = -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/include -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/include -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest
+  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/include -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/include -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest
   OBJECT_DIR = Unit_Tests/lib/googlemock/CMakeFiles/gmock_main.dir
   OBJECT_FILE_DIR = Unit_Tests/lib/googlemock/CMakeFiles/gmock_main.dir/src
 
@@ -479,7 +479,7 @@ build cmake_object_order_depends_target_gtest: phony || Unit_Tests/lib/googletes
 build Unit_Tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_COMPILER__gtest_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
   DEP_FILE = Unit_Tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d
   FLAGS = -g -std=c++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
-  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/include -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest
+  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/include -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest
   OBJECT_DIR = Unit_Tests/lib/googletest/CMakeFiles/gtest.dir
   OBJECT_FILE_DIR = Unit_Tests/lib/googletest/CMakeFiles/gtest.dir/src
 
@@ -512,7 +512,7 @@ build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_
 build Unit_Tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: CXX_COMPILER__gtest_main_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
   DEP_FILE = Unit_Tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d
   FLAGS = -g -std=c++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
-  INCLUDES = -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/include -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest
+  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/include -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest
   OBJECT_DIR = Unit_Tests/lib/googletest/CMakeFiles/gtest_main.dir
   OBJECT_FILE_DIR = Unit_Tests/lib/googletest/CMakeFiles/gtest_main.dir/src
 
