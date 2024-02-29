@@ -389,6 +389,24 @@ gtest_force_shared_crt:BOOL=OFF
 //Build gtest with internal symbols hidden in shared libraries.
 gtest_hide_internal_symbols:BOOL=OFF
 
+//Value Computed by CMake
+hw1_test_BINARY_DIR:STATIC=/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests
+
+//Value Computed by CMake
+hw1_test_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+hw1_test_SOURCE_DIR:STATIC=/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests
+
+//Value Computed by CMake
+intr_sort_BINARY_DIR:STATIC=/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort/src
+
+//Value Computed by CMake
+intr_sort_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+intr_sort_SOURCE_DIR:STATIC=/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src
+
 
 ########################
 # INTERNAL cache entries

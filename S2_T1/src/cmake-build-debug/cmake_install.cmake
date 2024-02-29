@@ -39,12 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/lib/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests/cmake_install.cmake")
+  include("/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

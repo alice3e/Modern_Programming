@@ -122,6 +122,121 @@ build install/strip: phony CMakeFiles/install/strip.util
 # /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/CMakeLists.txt
 # =============================================================================
 
+# =============================================================================
+# Object build statements for EXECUTABLE target hw1_test_run
+
+
+#############################################
+# Order-only phony target for hw1_test_run
+
+build cmake_object_order_depends_target_hw1_test_run: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main cmake_object_order_depends_target_hw1_lib
+
+build Unit_Tests/CMakeFiles/hw1_test_run.dir/hw1_tests.cpp.o: CXX_COMPILER__hw1_test_run_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/hw1_tests.cpp || cmake_object_order_depends_target_hw1_test_run
+  DEP_FILE = Unit_Tests/CMakeFiles/hw1_test_run.dir/hw1_tests.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/../src -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/include -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest
+  OBJECT_DIR = Unit_Tests/CMakeFiles/hw1_test_run.dir
+  OBJECT_FILE_DIR = Unit_Tests/CMakeFiles/hw1_test_run.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target hw1_test_run
+
+
+#############################################
+# Link the executable Unit_Tests/hw1_test_run
+
+build Unit_Tests/hw1_test_run: CXX_EXECUTABLE_LINKER__hw1_test_run_Debug Unit_Tests/CMakeFiles/hw1_test_run.dir/hw1_tests.cpp.o | hw1_insertion_sort/src/libhw1_lib.a lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || hw1_insertion_sort/src/libhw1_lib.a lib/libgtest.a lib/libgtest_main.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LINK_LIBRARIES = hw1_insertion_sort/src/libhw1_lib.a  lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
+  OBJECT_DIR = Unit_Tests/CMakeFiles/hw1_test_run.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Unit_Tests/hw1_test_run
+  TARGET_PDB = hw1_test_run.dbg
+
+
+#############################################
+# Utility command for test
+
+build Unit_Tests/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build Unit_Tests/test: phony Unit_Tests/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build Unit_Tests/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Unit_Tests/edit_cache: phony Unit_Tests/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Unit_Tests/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src -B/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Unit_Tests/rebuild_cache: phony Unit_Tests/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Unit_Tests/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Unit_Tests/CMakeFiles/install.util: CUSTOM_COMMAND Unit_Tests/all
+  COMMAND = cd /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Unit_Tests/install: phony Unit_Tests/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Unit_Tests/CMakeFiles/install/local.util: CUSTOM_COMMAND Unit_Tests/all
+  COMMAND = cd /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Unit_Tests/install/local: phony Unit_Tests/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Unit_Tests/CMakeFiles/install/strip.util: CUSTOM_COMMAND Unit_Tests/all
+  COMMAND = cd /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Unit_Tests/install/strip: phony Unit_Tests/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/CMakeLists.txt
+# =============================================================================
+
 
 #############################################
 # Utility command for test
@@ -501,128 +616,13 @@ build Unit_Tests/lib/googletest/install/strip: phony Unit_Tests/lib/googletest/C
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target RUN_hw1_tests
-
-
-#############################################
-# Order-only phony target for RUN_hw1_tests
-
-build cmake_object_order_depends_target_RUN_hw1_tests: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
-
-build Unit_Tests/tests/CMakeFiles/RUN_hw1_tests.dir/hw1_tests.cpp.o: CXX_COMPILER__RUN_hw1_tests_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/tests/hw1_tests.cpp || cmake_object_order_depends_target_RUN_hw1_tests
-  DEP_FILE = Unit_Tests/tests/CMakeFiles/RUN_hw1_tests.dir/hw1_tests.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/include -isystem /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest
-  OBJECT_DIR = Unit_Tests/tests/CMakeFiles/RUN_hw1_tests.dir
-  OBJECT_FILE_DIR = Unit_Tests/tests/CMakeFiles/RUN_hw1_tests.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target RUN_hw1_tests
-
-
-#############################################
-# Link the executable Unit_Tests/tests/RUN_hw1_tests
-
-build Unit_Tests/tests/RUN_hw1_tests: CXX_EXECUTABLE_LINKER__RUN_hw1_tests_Debug Unit_Tests/tests/CMakeFiles/RUN_hw1_tests.dir/hw1_tests.cpp.o | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
-  LINK_LIBRARIES = -lHW1_insertion_sort  lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
-  OBJECT_DIR = Unit_Tests/tests/CMakeFiles/RUN_hw1_tests.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = Unit_Tests/tests/RUN_hw1_tests
-  TARGET_PDB = RUN_hw1_tests.dbg
-
-
-#############################################
-# Utility command for test
-
-build Unit_Tests/tests/CMakeFiles/test.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest --force-new-ctest-process
-  DESC = Running tests...
-  pool = console
-  restat = 1
-
-build Unit_Tests/tests/test: phony Unit_Tests/tests/CMakeFiles/test.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build Unit_Tests/tests/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build Unit_Tests/tests/edit_cache: phony Unit_Tests/tests/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build Unit_Tests/tests/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src -B/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build Unit_Tests/tests/rebuild_cache: phony Unit_Tests/tests/CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build Unit_Tests/tests/list_install_components: phony
-
-
-#############################################
-# Utility command for install
-
-build Unit_Tests/tests/CMakeFiles/install.util: CUSTOM_COMMAND Unit_Tests/tests/all
-  COMMAND = cd /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build Unit_Tests/tests/install: phony Unit_Tests/tests/CMakeFiles/install.util
-
-
-#############################################
-# Utility command for install/local
-
-build Unit_Tests/tests/CMakeFiles/install/local.util: CUSTOM_COMMAND Unit_Tests/tests/all
-  COMMAND = cd /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build Unit_Tests/tests/install/local: phony Unit_Tests/tests/CMakeFiles/install/local.util
-
-
-#############################################
-# Utility command for install/strip
-
-build Unit_Tests/tests/CMakeFiles/install/strip.util: CUSTOM_COMMAND Unit_Tests/tests/all
-  COMMAND = cd /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build Unit_Tests/tests/install/strip: phony Unit_Tests/tests/CMakeFiles/install/strip.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
 # Object build statements for EXECUTABLE target HW1_insertion_sort
 
 
 #############################################
 # Order-only phony target for HW1_insertion_sort
 
-build cmake_object_order_depends_target_HW1_insertion_sort: phony || hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir
+build cmake_object_order_depends_target_HW1_insertion_sort: phony || cmake_object_order_depends_target_hw1_lib
 
 build hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir/main.cpp.o: CXX_COMPILER__HW1_insertion_sort_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/main.cpp || cmake_object_order_depends_target_HW1_insertion_sort
   DEP_FILE = hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir/main.cpp.o.d
@@ -630,13 +630,6 @@ build hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir/main.cpp.o: CXX_COMPI
   INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src
   OBJECT_DIR = hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir
   OBJECT_FILE_DIR = hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir
-
-build hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir/src/intr_sort.cpp.o: CXX_COMPILER__HW1_insertion_sort_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src/intr_sort.cpp || cmake_object_order_depends_target_HW1_insertion_sort
-  DEP_FILE = hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir/src/intr_sort.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src
-  OBJECT_DIR = hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir
-  OBJECT_FILE_DIR = hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir/src
 
 
 # =============================================================================
@@ -646,8 +639,9 @@ build hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir/src/intr_sort.cpp.o: 
 #############################################
 # Link the executable hw1_insertion_sort/HW1_insertion_sort
 
-build hw1_insertion_sort/HW1_insertion_sort: CXX_EXECUTABLE_LINKER__HW1_insertion_sort_Debug hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir/main.cpp.o hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir/src/intr_sort.cpp.o
+build hw1_insertion_sort/HW1_insertion_sort: CXX_EXECUTABLE_LINKER__HW1_insertion_sort_Debug hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir/main.cpp.o | hw1_insertion_sort/src/libhw1_lib.a || hw1_insertion_sort/src/libhw1_lib.a
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LINK_LIBRARIES = hw1_insertion_sort/src/libhw1_lib.a
   OBJECT_DIR = hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -735,6 +729,39 @@ build hw1_insertion_sort/install/strip: phony hw1_insertion_sort/CMakeFiles/inst
 # Write statements declared in CMakeLists.txt:
 # /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/CMakeLists.txt
 # =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target hw1_lib
+
+
+#############################################
+# Order-only phony target for hw1_lib
+
+build cmake_object_order_depends_target_hw1_lib: phony || hw1_insertion_sort/src/CMakeFiles/hw1_lib.dir
+
+build hw1_insertion_sort/src/CMakeFiles/hw1_lib.dir/intr_sort.cpp.o: CXX_COMPILER__hw1_lib_unscanned_Debug /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src/intr_sort.cpp || cmake_object_order_depends_target_hw1_lib
+  DEP_FILE = hw1_insertion_sort/src/CMakeFiles/hw1_lib.dir/intr_sort.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src
+  OBJECT_DIR = hw1_insertion_sort/src/CMakeFiles/hw1_lib.dir
+  OBJECT_FILE_DIR = hw1_insertion_sort/src/CMakeFiles/hw1_lib.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target hw1_lib
+
+
+#############################################
+# Link the static library hw1_insertion_sort/src/libhw1_lib.a
+
+build hw1_insertion_sort/src/libhw1_lib.a: CXX_STATIC_LIBRARY_LINKER__hw1_lib_Debug hw1_insertion_sort/src/CMakeFiles/hw1_lib.dir/intr_sort.cpp.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = hw1_insertion_sort/src/CMakeFiles/hw1_lib.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = hw1_insertion_sort/src/libhw1_lib.a
+  TARGET_PDB = hw1_lib.a.dbg
 
 
 #############################################
@@ -1058,8 +1085,6 @@ build HW1_insertion_sort: phony hw1_insertion_sort/HW1_insertion_sort
 
 build Menu_Task: phony menu_task/Menu_Task
 
-build RUN_hw1_tests: phony Unit_Tests/tests/RUN_hw1_tests
-
 build S2_T1: phony HW4_base_theory/S2_T1
 
 build gmock: phony lib/libgmock.a
@@ -1070,6 +1095,10 @@ build gtest: phony lib/libgtest.a
 
 build gtest_main: phony lib/libgtest_main.a
 
+build hw1_lib: phony hw1_insertion_sort/src/libhw1_lib.a
+
+build hw1_test_run: phony Unit_Tests/hw1_test_run
+
 build libgmock.a: phony lib/libgmock.a
 
 build libgmock_main.a: phony lib/libgmock_main.a
@@ -1077,6 +1106,8 @@ build libgmock_main.a: phony lib/libgmock_main.a
 build libgtest.a: phony lib/libgtest.a
 
 build libgtest_main.a: phony lib/libgtest_main.a
+
+build libhw1_lib.a: phony hw1_insertion_sort/src/libhw1_lib.a
 
 # =============================================================================
 # Folder targets.
@@ -1086,7 +1117,7 @@ build libgtest_main.a: phony lib/libgtest_main.a
 #############################################
 # Folder: /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug
 
-build all: phony Unit_Tests/lib/all Unit_Tests/tests/all hw1_insertion_sort/all HW4_base_theory/all menu_task/all
+build all: phony Unit_Tests/all hw1_insertion_sort/all HW4_base_theory/all menu_task/all
 
 # =============================================================================
 
@@ -1094,6 +1125,13 @@ build all: phony Unit_Tests/lib/all Unit_Tests/tests/all hw1_insertion_sort/all 
 # Folder: /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/HW4_base_theory
 
 build HW4_base_theory/all: phony HW4_base_theory/S2_T1
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests
+
+build Unit_Tests/all: phony Unit_Tests/hw1_test_run Unit_Tests/lib/all
 
 # =============================================================================
 
@@ -1119,13 +1157,6 @@ build Unit_Tests/lib/googletest/all: phony lib/libgtest.a lib/libgtest_main.a
 # =============================================================================
 
 #############################################
-# Folder: /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests
-
-build Unit_Tests/tests/all: phony Unit_Tests/tests/RUN_hw1_tests
-
-# =============================================================================
-
-#############################################
 # Folder: /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort
 
 build hw1_insertion_sort/all: phony hw1_insertion_sort/HW1_insertion_sort hw1_insertion_sort/src/all
@@ -1135,7 +1166,7 @@ build hw1_insertion_sort/all: phony hw1_insertion_sort/HW1_insertion_sort hw1_in
 #############################################
 # Folder: /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort/src
 
-build hw1_insertion_sort/src/all: phony
+build hw1_insertion_sort/src/all: phony hw1_insertion_sort/src/libhw1_lib.a
 
 # =============================================================================
 
@@ -1151,14 +1182,14 @@ build menu_task/all: phony menu_task/Menu_Task
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/HW4_base_theory/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/cmake/gmock.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/cmake/gmock_main.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/Config.cmake.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/gtest.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/gtest_main.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/internal_utils.cmake /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/tests/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/menu_task/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/HW4_base_theory/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/cmake/gmock.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/cmake/gmock_main.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/Config.cmake.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/gtest.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/gtest_main.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/internal_utils.cmake /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/menu_task/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/HW4_base_theory/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/cmake/gmock.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/cmake/gmock_main.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/Config.cmake.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/gtest.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/gtest_main.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/internal_utils.cmake /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/tests/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/menu_task/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/HW4_base_theory/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/cmake/gmock.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googlemock/cmake/gmock_main.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/Config.cmake.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/gtest.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/gtest_main.pc.in /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/Unit_Tests/lib/googletest/cmake/internal_utils.cmake /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src/CMakeLists.txt /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/menu_task/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
 
 
 #############################################

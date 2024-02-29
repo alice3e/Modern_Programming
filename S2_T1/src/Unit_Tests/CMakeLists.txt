@@ -1,13 +1,16 @@
 cmake_minimum_required(VERSION 3.26)
-project(google_test_example)
+project(hw1_test)
+set(CMAKE_CXX_STANDARD 23)
 
-set(CMAKE_CXX_STANDARD 17)
+add_executable(hw1_test_run hw1_tests.cpp)
 
+# We should find a full path to our lib using find_path
+# than we include out static lib from other dir
+find_path (LIB_INCLUDES intr_sort.h ../hw1_insertion_sort/src/)
+include_directories(${LIB_INCLUDES})
 
+add_subdirectory(lib)
 
-include_directories(src) # for main.cpp for #include "some_lib.h"
-
-add_subdirectory(src) # for CMakeLists.txt inside directories to run
-add_subdirectory(GT) # for CMakeLists.txt inside directories to run
-
-target_link_libraries(google_test_example some_lib)
+# linking Google_Tests_run with SortingAlgos_lib which will be tested
+target_link_libraries(hw1_test_run hw1_lib)
+target_link_libraries(hw1_test_run gtest gtest_main)

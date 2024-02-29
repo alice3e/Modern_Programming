@@ -5,6 +5,14 @@
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/CMakeFiles/install.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/CMakeFiles/install/local.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/CMakeFiles/install/strip.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/CMakeFiles/hw1_test_run.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/CMakeFiles/test.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/CMakeFiles/edit_cache.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/CMakeFiles/rebuild_cache.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/CMakeFiles/list_install_components.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/CMakeFiles/install.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/CMakeFiles/install/local.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/CMakeFiles/install/strip.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/lib/CMakeFiles/test.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/lib/CMakeFiles/edit_cache.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/lib/CMakeFiles/rebuild_cache.dir
@@ -30,14 +38,6 @@
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/lib/googletest/CMakeFiles/install.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/lib/googletest/CMakeFiles/install/local.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/lib/googletest/CMakeFiles/install/strip.dir
-/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests/CMakeFiles/RUN_hw1_tests.dir
-/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests/CMakeFiles/test.dir
-/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests/CMakeFiles/edit_cache.dir
-/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests/CMakeFiles/rebuild_cache.dir
-/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests/CMakeFiles/list_install_components.dir
-/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests/CMakeFiles/install.dir
-/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests/CMakeFiles/install/local.dir
-/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/Unit_Tests/tests/CMakeFiles/install/strip.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort/CMakeFiles/test.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort/CMakeFiles/edit_cache.dir
@@ -46,6 +46,7 @@
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort/CMakeFiles/install.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort/CMakeFiles/install/local.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort/CMakeFiles/install/strip.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort/src/CMakeFiles/hw1_lib.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort/src/CMakeFiles/test.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort/src/CMakeFiles/edit_cache.dir
 /Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/cmake-build-debug/hw1_insertion_sort/src/CMakeFiles/rebuild_cache.dir
