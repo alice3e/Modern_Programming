@@ -1,0 +1,6 @@
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/CMakeFiles/edit_cache.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/CMakeFiles/rebuild_cache.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src/CMakeFiles/hw1_lib.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src/CMakeFiles/edit_cache.dir
+/Users/alicee/Desktop/конспекты/Современное_программирование/S2_T1/src/hw1_insertion_sort/src/CMakeFiles/rebuild_cache.dir

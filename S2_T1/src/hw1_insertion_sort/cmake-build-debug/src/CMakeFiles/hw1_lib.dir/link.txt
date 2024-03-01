@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libhw1_lib.a CMakeFiles/hw1_lib.dir/intr_sort.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libhw1_lib.a
