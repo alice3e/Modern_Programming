@@ -1,0 +1,21 @@
+# ninja log v5
+2052	2079	1709368528376666000	lib/libgtest.a	5afcfd8fc26e3aff
+3	1334	1709368527627383730	Unit_Tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	5654e2aa82888c07
+6	981	1709368527273855731	menu_task/CMakeFiles/Menu_Task.dir/src/element_functions.cpp.o	826156fae6a1a580
+4	77	1709368526366924527	menu_task/CMakeFiles/Menu_Task.dir/src/menu_elements.cpp.o	c6c6a6e4a3e72553
+2079	2094	1709368528392528000	lib/libgtest_main.a	d8a822b4f1a9bcb6
+3	1008	1709368527300290856	hw1_insertion_sort/src/CMakeFiles/hw1_lib.dir/intr_sort.cpp.o	bce64ad15da0c630
+4	983	1709368527276567481	HW4_base_theory/CMakeFiles/S2_T1.dir/main.cpp.o	769446cbce45f215
+1008	1044	1709368527340754000	hw1_insertion_sort/src/libhw1_lib.a	ba1914e79a6ea098
+2	1430	1709368527723470104	Unit_Tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o	12851656e9340685
+1074	1126	1709368527420398355	hw1_insertion_sort/HW1_insertion_sort	f2e5cc3b49180fb5
+983	1039	1709368527334686273	HW4_base_theory/S2_T1	5ba25e27e00b7498
+3	1073	1709368527361895606	hw1_insertion_sort/CMakeFiles/HW1_insertion_sort.dir/main.cpp.o	76b42e251d17a533
+1	1380	1709368527672396688	Unit_Tests/CMakeFiles/hw1_test_run.dir/hw1_tests.cpp.o	62f735a12d215e87
+2079	2098	1709368528396207000	lib/libgmock.a	3db17422bd1ecc90
+78	997	1709368527289554981	menu_task/CMakeFiles/Menu_Task.dir/main.cpp.o	b72266198658273f
+997	1068	1709368527363726064	menu_task/Menu_Task	765ed3823a669f1c
+2	2052	1709368528343615685	Unit_Tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	297f515eab76cb4a
+2	1664	1709368527956956978	Unit_Tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o	b28f708aedeb34d4
+2098	2114	1709368528411901000	lib/libgmock_main.a	aaea146152cf3877
+2094	2134	1709368528430794018	Unit_Tests/hw1_test_run	ef33f01fc9818e47

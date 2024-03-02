@@ -1,22 +1,9 @@
-printf "Starting to test HW1"
+bash compile_all.sh
 
 
+cd build_ninja/Unit_Tests
 
-mkdir src/hw1_insertion_sort/cmake-build-debug
-
-cd src/hw1_insertion_sort/cmake-build-debug
-cmake ../CMakeLists.txt
-make 
-cd ../../
-
-
-printf "\n HW1 COMPILED! \n"
-
-mkdir Unit_Tests/cmake-build-debug
-
-cd Unit_Tests/cmake-build-debug
-cmake ../CMakeLists.txt
-make 
+./hw1_test_run
 
 
 printf "DONE!"

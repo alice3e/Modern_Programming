@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/hw1_test_run.dir/hw1_tests.cpp.o -o hw1_test_run  -lhw1_lib lib/libgtest.a lib/libgtest_main.a lib/libgtest.a 
