@@ -33,3 +33,4 @@
 *.app
 
 /cmake-build-debug
+/build_ninja
