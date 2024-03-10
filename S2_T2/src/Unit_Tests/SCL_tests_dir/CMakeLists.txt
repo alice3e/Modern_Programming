@@ -8,9 +8,10 @@ add_executable(SCL_test_run SCL_tests.cpp)
 # than we include out static lib from other dir
 
 
-message('')
-message(${LIB_INCLUDES})
-message('')
+find_path (LIB_INCLUDES_1 long_number.hpp ../../SCL/Long_Numbers/src)
+message(${LIB_INCLUDES_1})
+include_directories(${LIB_INCLUDES_1})
+
 
 # linking Google_Tests_run with SortingAlgos_lib which will be tested
 target_link_libraries(SCL_test_run SCL_lib)
