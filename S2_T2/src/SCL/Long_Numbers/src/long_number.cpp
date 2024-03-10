@@ -20,37 +20,38 @@ namespace IBusko {
         if (sign_ == POSITIVE) {
             for (int i = 0; i < length_; i++) {
                 int x = int(str[i]) - 48;
-                if (x < 0 || x > 9) throw "Wrong symbol in given string!"; // wil give "libc++abi: terminating due to uncaught exception of type char const*"
+                if (x < 0 || x > 9)
+                    throw "Wrong symbol in given string!"; // wil give "libc++abi: terminating due to uncaught exception of type char const*"
                 numbers_[i] = x;
             }
         } else {
             for (int i = 1; i < length_ + 1; i++) {
                 int x = int(str[i]) - 48;
                 if (x < 0 || x > 9) throw "Wrong symbol in given string!";
-                numbers_[i-1] = x;
+                numbers_[i - 1] = x;
             }
         }
     }
 
     LongNumber::LongNumber(const int x) {
-        if(x>=0) sign_ = POSITIVE;
+        if (x >= 0) sign_ = POSITIVE;
         else sign_ = NEGATIVE;
         int a = x; // for len
         int b = x; // for numbers_
-        if(sign_ == NEGATIVE){
+        if (sign_ == NEGATIVE) {
             a *= -1;
             b *= -1;
         }
 
         length_ = 0;
-        while(a > 0){
+        while (a > 0) {
             a /= 10;
-            length_ +=1;
+            length_ += 1;
         }
 
         numbers_ = new int[length_];
-        for(int i = 0 ; i < length_ ; i++){
-            int symb = b%10;
+        for (int i = 0; i < length_; i++) {
+            int symb = b % 10;
             b /= 10;
             numbers_[length_ - i - 1] = symb;
         }
@@ -61,7 +62,7 @@ namespace IBusko {
         sign_ = x.sign_;
 
         numbers_ = new int[length_];
-        for(int i = 0; i < length_;i++){
+        for (int i = 0; i < length_; i++) {
             numbers_[i] = x.numbers_[i];
         }
     }
@@ -71,41 +72,120 @@ namespace IBusko {
         sign_ = x.sign_;
 
         numbers_ = new int[length_];
-        for(int i = 0; i < length_;i++){
+        for (int i = 0; i < length_; i++) {
             numbers_[i] = x.numbers_[i];
         }
     }
 
     LongNumber::~LongNumber() {
-        // TODO
+        delete[] numbers_;
     }
 
     LongNumber &LongNumber::operator=(const char *const str) {
-        // TODO
+
+        length_ = strlen(str);
+        if (length_ >= 1 && str[0] == '-') {
+            sign_ = NEGATIVE;
+            length_ -= 1;
+        }
+        delete[] numbers_;
+        numbers_ = new int[length_];
+        if (sign_ == POSITIVE) {
+            for (int i = 0; i < length_; i++) {
+                int x = int(str[i]) - 48;
+                if (x < 0 || x > 9)
+                    throw "Wrong symbol in given string!"; // wil give "libc++abi: terminating due to uncaught exception of type char const*"
+                numbers_[i] = x;
+            }
+        } else {
+            for (int i = 1; i < length_ + 1; i++) {
+                int x = int(str[i]) - 48;
+                if (x < 0 || x > 9) throw "Wrong symbol in given string!";
+                numbers_[i - 1] = x;
+            }
+        }
+        return *this;
+    }
+
+    LongNumber &LongNumber::operator=(const int x) {
+        if (x >= 0) sign_ = POSITIVE;
+        else sign_ = NEGATIVE;
+        int a = x; // for len
+        int b = x; // for numbers_
+        if (sign_ == NEGATIVE) {
+            a *= -1;
+            b *= -1;
+        }
+
+        length_ = 0;
+        while (a > 0) {
+            a /= 10;
+            length_ += 1;
+        }
+        delete[] numbers_;
+        numbers_ = new int[length_];
+        for (int i = 0; i < length_; i++) {
+            int symb = b % 10;
+            b /= 10;
+            numbers_[length_ - i - 1] = symb;
+        }
         return *this;
     }
 
     LongNumber &LongNumber::operator=(const LongNumber &x) {
-        // TODO
+        this->length_ = x.length_;
+        this->sign_ = x.sign_;
+
+        delete[] numbers_;
+        numbers_ = new int[length_];
+        for (int i = 0; i < length_; i++) {
+            numbers_[i] = x.numbers_[i];
+        }
         return *this;
     }
 
     LongNumber &LongNumber::operator=(LongNumber &&x) {
-        // TODO
+        this->length_ = x.length_;
+        this->sign_ = x.sign_;
+
+        delete[] numbers_;
+        numbers_ = new int[length_];
+        for (int i = 0; i < length_; i++) {
+            numbers_[i] = x.numbers_[i];
+        }
         return *this;
     }
 
-    bool LongNumber::operator==(const LongNumber &x) {
+    bool LongNumber::operator==(const LongNumber &x) const {
+        if (this->sign_ == x.sign_ && this->length_ == x.length_) {
+            for (int i = 0; i < this->length_; i++) {
+                if (this->numbers_[i] != x.numbers_[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    bool LongNumber::operator!=(const LongNumber &x) const {
+        if (this->sign_ == x.sign_ && this->length_ == x.length_) {
+            for (int i = 0; i < this->length_; i++) {
+                if (this->numbers_[i] != x.numbers_[i]) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        return true;
+    }
+
+    bool LongNumber::operator>(const LongNumber &x) const {
         // TODO
         return true;
     }
 
-    bool LongNumber::operator>(const LongNumber &x) {
-        // TODO
-        return true;
-    }
-
-    bool LongNumber::operator<(const LongNumber &x) {
+    bool LongNumber::operator<(const LongNumber &x) const {
         // TODO
         return true;
     }
@@ -150,9 +230,10 @@ namespace IBusko {
 
     // ----------------------------------------------------------
     // PRIVATE
+    // А в чем задача функции? у нас есть точынй аналог get_digits_number
     // ----------------------------------------------------------
     int LongNumber::get_length(const char *const str) const {
-        // TODO
+        // TODO. А ЧТО TODO-ТО?
         int length = 0;
         return length;
     }

@@ -8,13 +8,12 @@ using namespace std;
 typedef IBusko::LongNumber ln;
 
 int main(){
-    ln b = "-12345";
-    ln a = ln(123123);
+    IBusko::LongNumber one_v1;
+    one_v1 = IBusko::LongNumber("1223");
+    IBusko::LongNumber one_v2 = IBusko::LongNumber("1223");
+    cout << (one_v1 == one_v2) << endl;
+    cout << one_v1 << endl << one_v2 <<  endl;
 
-    cout << "|| ";
-    cout << a << endl;
-    cout << a.get_digits_number() << endl;
-    cout << "END!" << endl;
     return  0;
 
 }
