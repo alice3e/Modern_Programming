@@ -71,10 +71,8 @@ namespace IBusko {
         length_ = x.length_;
         sign_ = x.sign_;
 
-        numbers_ = new int[length_];
-        for (int i = 0; i < length_; i++) {
-            numbers_[i] = x.numbers_[i];
-        }
+        numbers_ = x.numbers_;
+        x.numbers_ = nullptr;
     }
 
     LongNumber::~LongNumber() {
@@ -147,12 +145,8 @@ namespace IBusko {
     LongNumber &LongNumber::operator=(LongNumber &&x) {
         this->length_ = x.length_;
         this->sign_ = x.sign_;
-
-        delete[] numbers_;
-        numbers_ = new int[length_];
-        for (int i = 0; i < length_; i++) {
-            numbers_[i] = x.numbers_[i];
-        }
+        this->numbers_ = x.numbers_;
+        x.numbers_ = nullptr; // FIXME
         return *this;
     }
 
