@@ -27,10 +27,12 @@ public:
 
 TEST_F(EqualityFixture, equal) {
 ASSERT_TRUE(one_v1 == one_v2) << "Проверка " << one_v1 << " == " << one_v2;
+
 }
 
 TEST_F(EqualityFixture, not_equal) {
 ASSERT_FALSE(one_v1 == twelve) << "Проверка " << one_v1 << " == " << twelve;
+
 }
 
 TEST_F(EqualityFixture, not_equal_negative_var) {
