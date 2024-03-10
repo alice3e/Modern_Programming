@@ -3,6 +3,8 @@
 //
 #pragma once
 #include <iostream>
+#include <string>
+
 
 namespace IBusko {
     class LongNumber {
@@ -11,21 +13,22 @@ namespace IBusko {
         static const int NEGATIVE = -1;
         static const int POSITIVE = 1;
 
-        int* numbers;
-        int length;
-        int sign;
+        int* numbers_;
+        int length_;
+        int sign_;
 
     public:
-        LongNumber();
-        LongNumber(const char* const str);
-        LongNumber(const LongNumber& x);
-        LongNumber(LongNumber&& x);
+        LongNumber(); // Конструктор по умолчанию
+        LongNumber(const char* const str); // для "строки"
+        LongNumber(const int x); // для INT
+        LongNumber(const LongNumber& x); // конструктор копирования
+        LongNumber(LongNumber&& x); // конструктор перемещения
 
-        ~LongNumber();
+        ~LongNumber(); // деструктор
 
         LongNumber& operator = (const char* const str);
-        LongNumber& operator = (const LongNumber& x);
-        LongNumber& operator = (LongNumber&& x);
+        LongNumber& operator = (const LongNumber& x); // оператор присваивания копированием
+        LongNumber& operator = (LongNumber&& x); // оператор присваивания перемещения
 
         bool operator == (const LongNumber& x);
         bool operator > (const LongNumber& x);
