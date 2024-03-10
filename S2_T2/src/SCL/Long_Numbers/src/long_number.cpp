@@ -50,7 +50,7 @@ namespace IBusko {
     }
 
     bool LongNumber::operator < (const LongNumber& x) {
-        // TODO
+        // TODO later
         return true;
     }
 
