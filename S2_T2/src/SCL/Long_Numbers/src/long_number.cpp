@@ -212,14 +212,29 @@ namespace IBusko {
     }
 
     LongNumber LongNumber::operator+(const LongNumber &x) {
-        // TODO
         LongNumber result;
+        if(this->sign_ == x.sign_){
+            int longest_len = (this->length_ > x.length_) ? (this->length_) : (x.length_);
+
+        }else{
+            LongNumber reverse_x = x; // TODO: REMAKE WITH *(-1)
+            reverse_x.sign_ *= -1;
+            result = (*this - reverse_x);
+        }
+
         return result;
     }
 
     LongNumber LongNumber::operator-(const LongNumber &x) {
-        // TODO
         LongNumber result = x;
+        if(this->sign_ == x.sign_){
+
+        }else{
+            LongNumber reverse_x = x; // TODO: REMAKE WITH *(-1)
+            reverse_x.sign_ *= -1;
+            result = (*this + reverse_x);
+        }
+
         return result;
     }
 
@@ -263,7 +278,7 @@ namespace IBusko {
     // FRIENDLY
     // ----------------------------------------------------------
     std::ostream &operator<<(std::ostream &os, const LongNumber &x) {
-        if (x.sign_ == -1) os << '-';
+        if (x.sign_ == -1) os << LongNumber::MINUS;
         for (int i = 0; i < x.length_; i++) {
             os << x.numbers_[i];
         }
