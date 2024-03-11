@@ -104,7 +104,7 @@ TEST_F(IsLessFixture, less_negative_var) {
 }
 
 TEST_F(IsLessFixture, equal_negative_var) {
-    ASSERT_FALSE(negative_one < one_v1)
+    ASSERT_FALSE(negative_one > one_v1)
                                 << "Проверка " << negative_one << " < " << one_v1;
 }
 

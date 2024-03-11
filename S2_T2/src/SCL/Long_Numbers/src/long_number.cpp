@@ -69,21 +69,22 @@ namespace IBusko {
         sign_ = x.sign_;
 
         numbers_ = new int[length_];
+
         for (int i = 0; i < length_; i++) {
             numbers_[i] = x.numbers_[i];
         }
     }
 
-    LongNumber::LongNumber(LongNumber &&x) { // What's the difference from previous?
+    LongNumber::LongNumber(LongNumber &&x) {
         length_ = x.length_;
         sign_ = x.sign_;
-
         numbers_ = x.numbers_;
+
         x.numbers_ = nullptr;
     }
 
     LongNumber::~LongNumber() {
-        delete[] numbers_;
+        if(numbers_ != nullptr) delete[] numbers_;
     }
 
     LongNumber &LongNumber::operator=(const char *const str) {
@@ -93,8 +94,10 @@ namespace IBusko {
             sign_ = NEGATIVE;
             length_ -= 1;
         }
-        delete[] numbers_;
+
+        if(numbers_ != nullptr) delete[] numbers_;
         numbers_ = new int[length_];
+
         if (sign_ == POSITIVE) {
             for (int i = 0; i < length_; i++) {
                 int x = int(str[i]) - 48;
@@ -127,8 +130,10 @@ namespace IBusko {
             a /= 10;
             length_ += 1;
         }
-        delete[] numbers_;
+
+        if(numbers_ != nullptr) delete[] numbers_;
         numbers_ = new int[length_];
+
         for (int i = 0; i < length_; i++) {
             int symb = b % 10;
             b /= 10;
@@ -141,8 +146,9 @@ namespace IBusko {
         this->length_ = x.length_;
         this->sign_ = x.sign_;
 
-        delete[] numbers_;
+        if(numbers_ != nullptr) delete[] numbers_;
         numbers_ = new int[length_];
+
         for (int i = 0; i < length_; i++) {
             numbers_[i] = x.numbers_[i];
         }
@@ -150,6 +156,7 @@ namespace IBusko {
     }
 
     LongNumber &LongNumber::operator=(LongNumber &&x) {
+        if(numbers_ != nullptr) delete[] this->numbers_;
         this->length_ = x.length_;
         this->sign_ = x.sign_;
         this->numbers_ = x.numbers_;
@@ -170,25 +177,38 @@ namespace IBusko {
     }
 
     bool LongNumber::operator!=(const LongNumber &x) const {
-        if (this->sign_ == x.sign_ && this->length_ == x.length_) {
-            for (int i = 0; i < this->length_; i++) {
-                if (this->numbers_[i] != x.numbers_[i]) {
-                    return true;
-                }
-            }
-            return false;
-        }
-        return true;
+        return !(*this == x);
     }
 
     bool LongNumber::operator>(const LongNumber &x) const {
-        // TODO
-        return true;
+
+        if(this->sign_ > x.sign_) return true;
+        else if(this->sign_ < x.sign_) return false;
+        else{
+            if(this->sign_ != x.sign_) throw "Wrong comparison >";
+
+            if(this->length_ > x.length_) return true;
+            else if(this->length_ < x.length_) return false;
+            else{
+                for(int i = 0; i < this->length_ ; i++){
+                    if(this->numbers_[i] < x.numbers_[i]) return false;
+                }
+
+                if(this->numbers_[length_-1] == x.numbers_[length_ - 1]) return false; // x == this
+                else return true;
+            }
+        }
     }
 
     bool LongNumber::operator<(const LongNumber &x) const {
-        // TODO
-        return true;
+        if(this->sign_ == x.sign_ && this->length_ == x.length_){
+            bool eq = 1;
+            for(int i = 0; i < this->length_ ; i++){
+                if(this->numbers_[i] != x.numbers_[i]) eq = 0;
+            }
+            if(eq) return false;
+        }
+        return !(*this > x);
     }
 
     LongNumber LongNumber::operator+(const LongNumber &x) {

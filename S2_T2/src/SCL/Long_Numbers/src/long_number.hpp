@@ -33,9 +33,9 @@ namespace IBusko {
         LongNumber &operator=(LongNumber &&x); // оператор присваивания перемещения//✅
 
         bool operator==(const LongNumber &x) const;//✅
-        bool operator!=(const LongNumber &x) const;//✅
-        bool operator>(const LongNumber &x) const;
-        bool operator<(const LongNumber &x) const;
+        bool operator!=(const LongNumber &x) const;//✅ // TODO MAKE THEM INLINE
+        bool operator>(const LongNumber &x) const; //✅
+        bool operator<(const LongNumber &x) const; //✅ // TODO MAKE THEM INLINE
 
         LongNumber operator+(const LongNumber &x);
 
