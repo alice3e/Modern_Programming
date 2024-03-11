@@ -9,8 +9,8 @@ typedef IBusko::LongNumber ln;
 
 int main(){
     IBusko::LongNumber one_v1;
-    one_v1 = IBusko::LongNumber("123");
-    IBusko::LongNumber one_v2 = IBusko::LongNumber("1");
+    one_v1 = IBusko::LongNumber("1223");
+    IBusko::LongNumber one_v2 = IBusko::LongNumber("1223");
     cout << (one_v1 == one_v2) << endl;
     cout << one_v1 << endl << one_v2 <<  endl;
 

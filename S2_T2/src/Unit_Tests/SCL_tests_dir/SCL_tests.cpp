@@ -18,17 +18,16 @@ TEST(get_digits_number, check_negative) {
 //Tests of "=="
 class EqualityFixture : public testing::Test {
 public:
-
     IBusko::LongNumber one_v1 = IBusko::LongNumber("1");
-    //IBusko::LongNumber one_v2 = IBusko::LongNumber("1");
-    //IBusko::LongNumber twelve = IBusko::LongNumber("12");
-    //IBusko::LongNumber negative_one = IBusko::LongNumber("-1");
+    IBusko::LongNumber one_v2 = IBusko::LongNumber("1");
+    IBusko::LongNumber twelve = IBusko::LongNumber("12");
+    IBusko::LongNumber negative_one = IBusko::LongNumber("-1");
 };
 
 TEST_F(EqualityFixture, equal) {
-    //ASSERT_TRUE(one_v1 == one_v2) << "Проверка " << one_v1 << " == " << one_v2;
+    ASSERT_TRUE(one_v1 == one_v2) << "Проверка " << one_v1 << " == " << one_v2;
 }
-/*
+
 TEST_F(EqualityFixture, not_equal) {
     ASSERT_FALSE(one_v1 == twelve) << "Проверка " << one_v1 << " == " << twelve;
 }
@@ -368,4 +367,3 @@ int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
-*/
