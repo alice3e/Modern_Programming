@@ -9,14 +9,19 @@ namespace IBusko {
     }
 
     LongNumber::LongNumber(const char *const str) {
+        //std::cout << std::endl <<  " ‼️ Started LongNumber::LongNumber(const char *const str)"  << std::endl;
 
         length_ = strlen(str);
+        sign_ = POSITIVE;
+
         if (length_ >= 1 && str[0] == '-') {
             sign_ = NEGATIVE;
             length_ -= 1;
         }
+        //std::cout << std::endl <<  " ⚠️️ LongNumber::LongNumber(const char *const str) LENGTH_ = " << length_ <<  std::endl << std::endl;
 
         numbers_ = new int[length_];
+
         if (sign_ == POSITIVE) {
             for (int i = 0; i < length_; i++) {
                 int x = int(str[i]) - 48;
@@ -31,6 +36,7 @@ namespace IBusko {
                 numbers_[i - 1] = x;
             }
         }
+
     }
 
     LongNumber::LongNumber(const int x) {
@@ -55,6 +61,7 @@ namespace IBusko {
             b /= 10;
             numbers_[length_ - i - 1] = symb;
         }
+
     }
 
     LongNumber::LongNumber(const LongNumber &x) {

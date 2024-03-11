@@ -18,6 +18,7 @@ TEST(get_digits_number, check_negative) {
 //Tests of "=="
 class EqualityFixture : public testing::Test {
 public:
+
     IBusko::LongNumber one_v1 = IBusko::LongNumber("1");
     IBusko::LongNumber one_v2 = IBusko::LongNumber("1");
     IBusko::LongNumber twelve = IBusko::LongNumber("12");
