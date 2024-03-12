@@ -3,12 +3,18 @@
 
 namespace IBusko {
     LongNumber::LongNumber() {
-        numbers_ = new int[0];
-        length_ = 0;
+        numbers_ = new int[1];
+        length_ = 1;
         sign_ = POSITIVE;
     }
 
     LongNumber::LongNumber(const char *const str) {
+        if(str == "0"){
+            length_ = 1;
+            sign_ = POSITIVE;
+            numbers_ = new int[1];
+        }
+
         //std::cout << std::endl <<  " ‼️ Started LongNumber::LongNumber(const char *const str)"  << std::endl;
 
         length_ = strlen(str);
@@ -40,6 +46,12 @@ namespace IBusko {
     }
 
     LongNumber::LongNumber(const int x) {
+        if(x == 0){
+            sign_ = POSITIVE;
+            length_ = 1;
+            numbers_ = new int[1];
+        }
+
         if (x >= 0) sign_ = POSITIVE;
         else sign_ = NEGATIVE;
         int a = x; // for len
@@ -213,6 +225,9 @@ namespace IBusko {
 
     LongNumber LongNumber::operator+(const LongNumber &x) {
         LongNumber result;
+
+        if(*this == x && x == LongNumber(0)) return result; // check for 0 + 0
+
         if (this->sign_ == x.sign_) {
             result.sign_ = this->sign_;
             int longest_len = (this->length_ > x.length_) ? (this->length_) : (x.length_);
@@ -275,11 +290,12 @@ namespace IBusko {
 
     LongNumber LongNumber::operator-(const LongNumber &x) {
         LongNumber res;
-
+        if(*this == x) return res; // check for 0 - 0
         if (x.sign_ == this->sign_) {
             bool swap_flag = 0;
             LongNumber a, b; // always a > b
             if (*this > x) {
+                std::cout << "A =  " << x;
                 a = *this;
                 b = x;
             } else {
@@ -287,7 +303,7 @@ namespace IBusko {
                 b = *this;
                 swap_flag = 1;
             }
-            //std::cout << "A =  " << a << " | b = " << b << std::endl << std::endl;
+            std::cout << "A =  " << a << " | b = " << b << std::endl << std::endl;
             res.length_ = a.length_;
             res.sign_ = POSITIVE;
             res.numbers_ = new int[res.length_];
@@ -332,9 +348,21 @@ namespace IBusko {
 
             // замена знака если изначально this < x
             if(swap_flag) a.sign_ *= -1;
-
             return a;
+        }else{
+            if(*this > x){
+                LongNumber a = x;
+                a.sign_ *= -1;
+                return (*this + a);
+            }else{
+                LongNumber a = *this; // a = -123 x = 23
+                a.sign_ *= -1; // a = 123
+                a = a + x; // a = 123 + 23 = (-123 - 23)*-1
+                a.sign_ *= -1; // a = -146 = (-123 - 23)
+                return a;
+            }
         }
+        throw "Something wrong in '-' ";
         return res;
     }
 
