@@ -413,9 +413,16 @@ namespace IBusko {
     }
 
     LongNumber LongNumber::operator/(const LongNumber &x) {
-
-
-        LongNumber result;
+        LongNumber a = "0",b = *this,c = x, counter = "0";
+        if(b<0) b.sign_ *= -1;
+        if(c<0) c.sign_ *= -1;
+        while(a * c < b){
+            a = a + c;
+            counter = counter + 1;
+        }
+        //std::cout << "a = " << a << " b = " << b << " c = " << c << std::endl;
+        LongNumber result = counter * c;
+        result.sign_ = (this->sign_ * x.sign_ > 0) ? (POSITIVE) : (NEGATIVE);
         return result;
     }
 
