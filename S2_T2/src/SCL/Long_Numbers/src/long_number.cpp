@@ -84,7 +84,7 @@ namespace IBusko {
     }
 
     LongNumber::~LongNumber() {
-        if(numbers_ != nullptr) delete[] numbers_;
+        if (numbers_ != nullptr) delete[] numbers_;
     }
 
     LongNumber &LongNumber::operator=(const char *const str) {
@@ -95,7 +95,7 @@ namespace IBusko {
             length_ -= 1;
         }
 
-        if(numbers_ != nullptr) delete[] numbers_;
+        if (numbers_ != nullptr) delete[] numbers_;
         numbers_ = new int[length_];
 
         if (sign_ == POSITIVE) {
@@ -131,7 +131,7 @@ namespace IBusko {
             length_ += 1;
         }
 
-        if(numbers_ != nullptr) delete[] numbers_;
+        if (numbers_ != nullptr) delete[] numbers_;
         numbers_ = new int[length_];
 
         for (int i = 0; i < length_; i++) {
@@ -146,7 +146,7 @@ namespace IBusko {
         this->length_ = x.length_;
         this->sign_ = x.sign_;
 
-        if(numbers_ != nullptr) delete[] numbers_;
+        if (numbers_ != nullptr) delete[] numbers_;
         numbers_ = new int[length_];
 
         for (int i = 0; i < length_; i++) {
@@ -156,7 +156,7 @@ namespace IBusko {
     }
 
     LongNumber &LongNumber::operator=(LongNumber &&x) {
-        if(numbers_ != nullptr) delete[] this->numbers_;
+        if (numbers_ != nullptr) delete[] this->numbers_;
         this->length_ = x.length_;
         this->sign_ = x.sign_;
         this->numbers_ = x.numbers_;
@@ -182,91 +182,162 @@ namespace IBusko {
 
     bool LongNumber::operator>(const LongNumber &x) const {
 
-        if(this->sign_ > x.sign_) return true;
-        else if(this->sign_ < x.sign_) return false;
-        else{
-            if(this->sign_ != x.sign_) throw "Wrong comparison >";
+        if (this->sign_ > x.sign_) return true;
+        else if (this->sign_ < x.sign_) return false;
+        else {
+            if (this->sign_ != x.sign_) throw "Wrong comparison >";
 
-            if(this->length_ > x.length_) return true;
-            else if(this->length_ < x.length_) return false;
-            else{
-                for(int i = 0; i < this->length_ ; i++){
-                    if(this->numbers_[i] < x.numbers_[i]) return false;
+            if (this->length_ > x.length_) return true;
+            else if (this->length_ < x.length_) return false;
+            else {
+                for (int i = 0; i < this->length_; i++) {
+                    if (this->numbers_[i] < x.numbers_[i]) return false;
                 }
 
-                if(this->numbers_[length_-1] == x.numbers_[length_ - 1]) return false; // x == this
+                if (this->numbers_[length_ - 1] == x.numbers_[length_ - 1]) return false; // x == this
                 else return true;
             }
         }
     }
 
     bool LongNumber::operator<(const LongNumber &x) const {
-        if(this->sign_ == x.sign_ && this->length_ == x.length_){
+        if (this->sign_ == x.sign_ && this->length_ == x.length_) {
             bool eq = 1;
-            for(int i = 0; i < this->length_ ; i++){
-                if(this->numbers_[i] != x.numbers_[i]) eq = 0;
+            for (int i = 0; i < this->length_; i++) {
+                if (this->numbers_[i] != x.numbers_[i]) eq = 0;
             }
-            if(eq) return false;
+            if (eq) return false;
         }
         return !(*this > x);
     }
 
     LongNumber LongNumber::operator+(const LongNumber &x) {
         LongNumber result;
-        if(this->sign_ == x.sign_){
+        if (this->sign_ == x.sign_) {
             result.sign_ = this->sign_;
             int longest_len = (this->length_ > x.length_) ? (this->length_) : (x.length_);
-            result.length_ = longest_len+1;
+            result.length_ = longest_len + 1;
             result.numbers_ = new int[result.length_];
 
 
-            int i_a = this->length_-1, i_b = x.length_-1, i_r = result.length_-1;
-            for(int i = 0;i < result.length_;i++){
+            int i_a = this->length_ - 1, i_b = x.length_ - 1, i_r = result.length_ - 1;
+            for (int i = 0; i < result.length_; i++) {
                 int a = 0, b = 0;
-                if(i_a >= 0) a = this->numbers_[i_a];
-                if(i_b >= 0) b = x.numbers_[i_b];
+                if (i_a >= 0) a = this->numbers_[i_a];
+                if (i_b >= 0) b = x.numbers_[i_b];
 
                 int suma = a + b;
-                if(suma/10 > 0) result.numbers_[i_r-1] += 1;
-                result.numbers_[i_r] += suma%10;
-                if(result.numbers_[i_r] >= 10){
+                if (suma / 10 > 0) result.numbers_[i_r - 1] += 1;
+                result.numbers_[i_r] += suma % 10;
+                if (result.numbers_[i_r] >= 10) {
                     result.numbers_[i_r] %= 10;
-                    result.numbers_[i_r-1] += 1;
+                    result.numbers_[i_r - 1] += 1;
                 }
 
                 //std::cout << a << " | " << b << " | " << result.numbers_[i_r] << std::endl;
-                i_a -= 1; i_b -=1; i_r -=1;
+                i_a -= 1;
+                i_b -= 1;
+                i_r -= 1;
             }
             // Обрезка ведущего нуля
-            if(result.numbers_[0] == 0){
+            if (result.numbers_[0] == 0) {
 
                 LongNumber result_2;
-                result_2.length_ = result.length_-1;
+                result_2.length_ = result.length_ - 1;
                 result_2.sign_ = result.sign_;
-                for(int i = 0;i < result_2.length_;i++){
-                    result_2.numbers_[i] = result.numbers_[i+1];
+                for (int i = 0; i < result_2.length_; i++) {
+                    result_2.numbers_[i] = result.numbers_[i + 1];
                 }
                 return result_2;
             }
 
             return result;
 
-        }else{
+        } else {
             //FIXME
-            LongNumber x_2 = x;
-            x_2.sign_ *= -1;
-            return (*this - x_2);
+            LongNumber reversed;
+            if (x < *this) {
+                reversed = x;
+                reversed.sign_ *= -1;
+
+                return (*this - reversed);
+            } else {
+                reversed = *this;
+                reversed.sign_ *= -1;
+
+                LongNumber x_copy = x; // because x - const
+                return (x_copy - reversed);
+            }
+
         }
 
     }
 
     LongNumber LongNumber::operator-(const LongNumber &x) {
-        LongNumber x_2 = x;
-        x_2.sign_ *= 1;
-        LongNumber res = (*this + x_2);
-        res.sign_ *= 1;
-        return  res;
+        LongNumber res;
+
+        if (x.sign_ == this->sign_) {
+            bool swap_flag = 0;
+            LongNumber a, b; // always a > b
+            if (*this > x) {
+                a = *this;
+                b = x;
+            } else {
+                a = x;
+                b = *this;
+                swap_flag = 1;
+            }
+            //std::cout << "A =  " << a << " | b = " << b << std::endl << std::endl;
+            res.length_ = a.length_;
+            res.sign_ = POSITIVE;
+            res.numbers_ = new int[res.length_];
+
+            int a_i = a.length_ - 1, b_i = b.length_ - 1;
+            for(int i = 0 ; i < b.length_ ; i++){
+                if(a.numbers_[a_i] < 0){
+                    a.numbers_[a_i] += 10;
+                    a.numbers_[a_i - 1] -= 1;
+                }
+
+                //std::cout << "Start a[i] =  " << a.numbers_[a_i] << " | b[i] = " << b.numbers_[b_i] <<  " | a = " << a << std::endl;
+
+                if(a.numbers_[a_i] >= b.numbers_[b_i]){
+                    a.numbers_[a_i] = a.numbers_[a_i] - b.numbers_[b_i];
+                }else{
+                    a.numbers_[a_i] = a.numbers_[a_i] - b.numbers_[b_i] + 10;
+                    a.numbers_[a_i - 1] -= 1;
+                }
+                //std::cout << "End a[i] = " << a.numbers_[a_i] << " | b[i] = " << b.numbers_[b_i] <<  " | a = " << a << std::endl << std::endl;
+                a_i -= 1; b_i -= 1;
+            }
+
+            for(int i = 0; i < a.length_; i++){
+                if(a.numbers_[a.length_ - i - 1] < 0){
+                    a.numbers_[a.length_ - i - 1] += 10;
+                    a.numbers_[a.length_ - i - 2] -= 1;
+                }
+            }
+
+            // Обрезка ведущего нуля
+            if (a.numbers_[0] == 0) {
+
+                LongNumber result_2;
+                result_2.length_ = a.length_ - 1;
+                result_2.sign_ = a.sign_;
+                for (int i = 0; i < result_2.length_; i++) {
+                    result_2.numbers_[i] = a.numbers_[i + 1];
+                }
+                a = result_2;
+            }
+
+            // замена знака если изначально this < x
+            if(swap_flag) a.sign_ *= -1;
+
+            return a;
+        }
+        return res;
     }
+
 
     LongNumber LongNumber::operator*(const LongNumber &x) {
         // TODO
