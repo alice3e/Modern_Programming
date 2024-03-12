@@ -128,6 +128,14 @@ TEST_F(Addition, big_nums) {
                                 << "Неправильно посчитано: " << big_num_v1 << " + " << big_num_v2;
 }
 
+TEST_F(Addition, small_nums) {
+    IBusko::LongNumber ans = IBusko::LongNumber("13");
+    IBusko::LongNumber res;
+    res = twelve + one_v1;
+    ASSERT_EQ(res, ans) << "Неправильно посчитано: " << twelve << " + " << one_v1;
+}
+
+
 TEST_F(Addition, negative_nums) {
     IBusko::LongNumber ans = IBusko::LongNumber("-13");
     IBusko::LongNumber res;

@@ -214,7 +214,42 @@ namespace IBusko {
     LongNumber LongNumber::operator+(const LongNumber &x) {
         LongNumber result;
         if(this->sign_ == x.sign_){
+            result.sign_ = this->sign_;
             int longest_len = (this->length_ > x.length_) ? (this->length_) : (x.length_);
+            result.length_ = longest_len+1;
+            result.numbers_ = new int[result.length_];
+
+
+            int i_a = this->length_-1, i_b = x.length_-1, i_r = result.length_-1;
+            for(int i = 0;i < result.length_;i++){
+                int a = 0, b = 0;
+                if(i_a >= 0) a = this->numbers_[i_a];
+                if(i_b >= 0) b = x.numbers_[i_b];
+
+                int suma = a + b;
+                if(suma/10 > 0) result.numbers_[i_r-1] += 1;
+                result.numbers_[i_r] += suma%10;
+                if(result.numbers_[i_r] >= 10){
+                    result.numbers_[i_r] %= 10;
+                    result.numbers_[i_r-1] += 1;
+                }
+
+                //std::cout << a << " | " << b << " | " << result.numbers_[i_r] << std::endl;
+                i_a -= 1; i_b -=1; i_r -=1;
+            }
+            // Обрезка ведущего нуля
+            if(result.numbers_[0] == 0){
+
+                LongNumber result_2;
+                result_2.length_ = result.length_-1;
+                result_2.sign_ = result.sign_;
+                for(int i = 0;i < result_2.length_;i++){
+                    result_2.numbers_[i] = result.numbers_[i+1];
+                }
+                return result_2;
+            }
+
+            return result;
 
         }else{
             LongNumber reverse_x = x; // TODO: REMAKE WITH *(-1)
