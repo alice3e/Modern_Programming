@@ -252,25 +252,20 @@ namespace IBusko {
             return result;
 
         }else{
-            LongNumber reverse_x = x; // TODO: REMAKE WITH *(-1)
-            reverse_x.sign_ *= -1;
-            result = (*this - reverse_x);
+            //FIXME
+            LongNumber x_2 = x;
+            x_2.sign_ *= -1;
+            return (*this - x_2);
         }
 
-        return result;
     }
 
     LongNumber LongNumber::operator-(const LongNumber &x) {
-        LongNumber result = x;
-        if(this->sign_ == x.sign_){
-
-        }else{
-            LongNumber reverse_x = x; // TODO: REMAKE WITH *(-1)
-            reverse_x.sign_ *= -1;
-            result = (*this + reverse_x);
-        }
-
-        return result;
+        LongNumber x_2 = x;
+        x_2.sign_ *= 1;
+        LongNumber res = (*this + x_2);
+        res.sign_ *= 1;
+        return  res;
     }
 
     LongNumber LongNumber::operator*(const LongNumber &x) {
@@ -320,3 +315,31 @@ namespace IBusko {
         return os;
     }
 }
+
+/*
+ *     LongNumber LongNumber::operator-(const LongNumber &x) {
+        LongNumber result;
+        if(this->sign_ == x.sign_){
+            bool a_bigger = 1;
+            if(*this < x) a_bigger = 0;
+
+            if(a_bigger){
+                result.sign_ = this->sign_;
+                result.length_ = this->length_;
+                result.numbers_ = new int[result.length_];
+
+                int i_a = this->length_-1, i_b = x.length_-1;
+                for(int i = 0;i < x.length_;i++){
+
+                }
+            }
+
+        }else{
+            LongNumber reverse_x = x; // TODO: REMAKE WITH *(-1)
+            reverse_x.sign_ *= -1;
+            result = (*this + reverse_x);
+        }
+
+        return result;
+    }
+ */
