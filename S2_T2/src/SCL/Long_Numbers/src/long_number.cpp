@@ -231,13 +231,15 @@ namespace IBusko {
     LongNumber LongNumber::operator+(const LongNumber &x) {
         LongNumber result;
 
-        if(*this == x && x == LongNumber(0)) return result; // check for 0 + 0
+        if(*this == x && x == LongNumber("0")) return result; // check for 0 + 0
 
         if (this->sign_ == x.sign_) {
+
+
             result.sign_ = this->sign_;
             int longest_len = (this->length_ > x.length_) ? (this->length_) : (x.length_);
             result.length_ = longest_len + 1;
-            result.numbers_ = new int[result.length_];
+            result.numbers_ = new int[result.length_]; // FIXME MEM LEAKS SOMEWHERE!
 
 
             int i_a = this->length_ - 1, i_b = x.length_ - 1, i_r = result.length_ - 1;
@@ -267,13 +269,13 @@ namespace IBusko {
                 for (int i = 0; i < result_2.length_; i++) {
                     result_2.numbers_[i] = result.numbers_[i + 1];
                 }
+
                 return result_2;
             }
 
-            return result;
+            return result; // FIXME LEAKS BECAUSE WE CANT DELETE NUMBERS_
 
         } else {
-            //FIXME
             LongNumber reversed;
             if (x < *this) {
                 reversed = x;
@@ -289,7 +291,8 @@ namespace IBusko {
             }
 
         }
-
+        throw "error in +";
+        return result;
     }
 
     LongNumber LongNumber::operator-(const LongNumber &x) {
@@ -403,12 +406,13 @@ namespace IBusko {
                     pr_step[0] = static_cast<char>((pr%10) + 48);
                 }
                 res = res + LongNumber(pr_step);
-
+                delete[] pr_step;
             }
 
             b_i -=1;
         }
         res.sign_ = (this->sign_ * x.sign_ > 0) ? (POSITIVE) : (NEGATIVE);
+
         return res;
     }
 
