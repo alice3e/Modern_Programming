@@ -413,22 +413,35 @@ namespace IBusko {
     }
 
     LongNumber LongNumber::operator/(const LongNumber &x) {
-        LongNumber a = "0",b = *this,c = x, counter = "0";
+        LongNumber res = "0",a = *this,b = x, counter = "0";
         if(b<0) b.sign_ *= -1;
-        if(c<0) c.sign_ *= -1;
-        while(a * c < b){
-            a = a + c;
-            counter = counter + 1;
+        if(a<0) a.sign_ *= -1;
+
+        while(res * b < a){
+            res = res + 1;
+            //std::cout << "res*b = " << res*b << std::endl;
         }
-        //std::cout << "a = " << a << " b = " << b << " c = " << c << std::endl;
-        LongNumber result = counter * c;
-        result.sign_ = (this->sign_ * x.sign_ > 0) ? (POSITIVE) : (NEGATIVE);
-        return result;
+        if(res*b > a) res = res - 1;
+
+        res.sign_ = (this->sign_ * x.sign_ > 0) ? (POSITIVE) : (NEGATIVE);
+        return res;
+
     }
 
     LongNumber LongNumber::operator%(const LongNumber &x) {
-        // TODO
-        LongNumber result;
+        LongNumber result = ("0");
+        LongNumber del = (*this/x);
+        result = (*this - (del*x));
+
+        // FIXME - understand how we should %, because in C++ (int) -12 % -5 = -2, but
+        // in the Interntet (-12)%(-5) = 3
+        // So we should give positive only result or negative is fine?
+
+        if(this->sign_ == x.sign_ && x.sign_ == POSITIVE) result.sign_ = POSITIVE; // 12%5 = 2
+        else if(this->sign_ == x.sign_ && x.sign_ == NEGATIVE) result.sign_ = NEGATIVE; // (-12)%(-5) = -2
+        else if(this->sign_ == POSITIVE && x.sign_ == NEGATIVE) result.sign_ = POSITIVE; // 12%(-5) = 2
+        else result.sign_ = NEGATIVE; // (-12)%5 = -2
+
         return result;
     }
 

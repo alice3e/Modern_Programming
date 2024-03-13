@@ -340,7 +340,7 @@ TEST_F(Remainder, positive_positive) {
 }
 
 TEST_F(Remainder, positive_negative) {
-    IBusko::LongNumber ans = IBusko::LongNumber("3");
+    IBusko::LongNumber ans = IBusko::LongNumber("-2");
     IBusko::LongNumber res;
     res = negative_twelve % five;
     ASSERT_EQ(res, ans)
@@ -348,7 +348,7 @@ TEST_F(Remainder, positive_negative) {
 }
 
 TEST_F(Remainder, negative_negative) {
-    IBusko::LongNumber ans = IBusko::LongNumber("3");
+    IBusko::LongNumber ans = IBusko::LongNumber("-2");
     IBusko::LongNumber res;
     res = negative_twelve % negative_five;
     ASSERT_EQ(res, ans)
