@@ -11,10 +11,11 @@ typedef IBusko::LongNumber ln;
 // Вставить в терминал и проверить скомпилированный файл на утечки
 
 int main(){
-    IBusko::LongNumber one_v1 = "11321231231212312312331321232";
-    IBusko::LongNumber one_v2 = "51112312323112312312312323123";
-
-    cout << " ‼️‼️| " << (one_v1 + one_v2) << " | ‼️‼️" << endl;
+    IBusko::LongNumber one_v1 = "12";
+    IBusko::LongNumber one_v2;
+    one_v2 = ln("10");
+    cout << " ‼️‼️| " << one_v1  << " | " << one_v2 << " | ‼️‼️" << endl;
+    cout << " ‼️‼️| " << (one_v1 * one_v2) << " | ‼️‼️" << endl;
 
     //cout << " | " << (one_v1 == ln("0")) << " | " << endl;
     //cout << " | " << (one_v2 == ln("0")) << " | " << endl;

@@ -3,8 +3,8 @@
 
 namespace IBusko {
     LongNumber::LongNumber() {
-        numbers_ = new int[1];
-        length_ = 1;
+        numbers_ = nullptr;
+        length_ = 0;
         sign_ = POSITIVE;
     }
 
@@ -13,72 +13,74 @@ namespace IBusko {
             length_ = 1;
             sign_ = POSITIVE;
             numbers_ = new int[1];
-        }
+        }else{
 
-        //std::cout << std::endl <<  " ‼️ Started LongNumber::LongNumber(const char *const str)"  << std::endl;
+            //std::cout << std::endl <<  " ‼️ Started LongNumber::LongNumber(const char *const str)"  << std::endl;
 
-        length_ = strlen(str);
-        sign_ = POSITIVE;
+            length_ = strlen(str); // str MUST HAVE \0 at the end
+            sign_ = POSITIVE;
 
-        if (length_ >= 1 && str[0] == '-') {
-            sign_ = NEGATIVE;
-            length_ -= 1;
-        }
-        //std::cout << std::endl <<  " ⚠️️ LongNumber::LongNumber(const char *const str) LENGTH_ = " << length_ <<  std::endl << std::endl;
-
-        numbers_ = new int[length_];
-
-        if (sign_ == POSITIVE) {
-            for (int i = 0; i < length_; i++) {
-                int x = int(str[i]) - 48;
-                if (x < 0 || x > 9){
-                    std::cout << std::endl << "Wrong symbol in given string! - " << x << std::endl;
-                    throw "Wrong symbol in given string!"; // wil give "libc++abi: terminating due to uncaught exception of type char const*"
-                }
-                numbers_[i] = x;
+            if (length_ >= 1 && str[0] == '-') {
+                sign_ = NEGATIVE;
+                length_ -= 1;
             }
-        } else {
-            for (int i = 1; i < length_ + 1; i++) {
-                int x = int(str[i]) - 48;
-                if (x < 0 || x > 9){
-                    std::cout << std::endl << "Wrong symbol in given string! - " << x << std::endl;
-                    throw "Wrong symbol in given string!"; // wil give "libc++abi: terminating due to uncaught exception of type char const*"
+
+
+            numbers_ = new int[length_];
+
+            if (sign_ == POSITIVE) {
+                for (int i = 0; i < length_; i++) {
+                    int x = int(str[i]) - 48;
+                    if (x < 0 || x > 9){
+                        std::cout << std::endl << "Wrong symbol in given string! - " << x << " | string - " << str << std::endl;
+                        throw "Wrong symbol in given string!"; // wil give "libc++abi: terminating due to uncaught exception of type char const*"
+                    }
+                    numbers_[i] = x;
                 }
-                numbers_[i - 1] = x;
+            } else {
+                for (int i = 1; i < length_ + 1; i++) {
+                    int x = int(str[i]) - 48;
+                    if (x < 0 || x > 9){
+                        std::cout << std::endl << "Wrong symbol in given string! - " << x << std::endl;
+                        throw "Wrong symbol in given string!"; // wil give "libc++abi: terminating due to uncaught exception of type char const*"
+                    }
+                    numbers_[i - 1] = x;
+                }
             }
         }
-
     }
 
     LongNumber::LongNumber(const int x) {
         if(x == 0){
+            //std::cout << std::endl << "ZERO INT! - " << x << std::endl;
             length_ = 1;
             sign_ = POSITIVE;
             numbers_ = new int[1];
-        }
+            numbers_[0] = 0;
+        }else{
+            //std::cout << std::endl << "NOT ZERO INT! - " << x << std::endl;
+            if (x >= 0) sign_ = POSITIVE;
+            else sign_ = NEGATIVE;
+            int a = x; // for len
+            int b = x; // for numbers_
+            if (sign_ == NEGATIVE) {
+                a *= -1;
+                b *= -1;
+            }
 
-        if (x >= 0) sign_ = POSITIVE;
-        else sign_ = NEGATIVE;
-        int a = x; // for len
-        int b = x; // for numbers_
-        if (sign_ == NEGATIVE) {
-            a *= -1;
-            b *= -1;
-        }
+            length_ = 0;
+            while (a > 0) {
+                a /= 10;
+                length_ += 1;
+            }
 
-        length_ = 0;
-        while (a > 0) {
-            a /= 10;
-            length_ += 1;
+            numbers_ = new int[length_];
+            for (int i = 0; i < length_; i++) {
+                int symb = b % 10;
+                b /= 10;
+                numbers_[length_ - i - 1] = symb;
+            }
         }
-
-        numbers_ = new int[length_];
-        for (int i = 0; i < length_; i++) {
-            int symb = b % 10;
-            b /= 10;
-            numbers_[length_ - i - 1] = symb;
-        }
-
     }
 
     LongNumber::LongNumber(const LongNumber &x) {
@@ -101,7 +103,9 @@ namespace IBusko {
     }
 
     LongNumber::~LongNumber() {
-        if (numbers_ != nullptr) delete[] numbers_;
+        if (numbers_ != nullptr){
+            delete[] numbers_;
+        }
     }
 
     LongNumber &LongNumber::operator=(const char *const str) {
@@ -133,30 +137,37 @@ namespace IBusko {
     }
 
     LongNumber &LongNumber::operator=(const int x) {
-        if (x >= 0) sign_ = POSITIVE;
-        else sign_ = NEGATIVE;
-        int a = x; // for len
-        int b = x; // for numbers_
-        if (sign_ == NEGATIVE) {
-            a *= -1;
-            b *= -1;
-        }
+        if(x==0){
+            length_ = 1;
+            sign_ = POSITIVE;
+            numbers_ = new int[1];
+            return *this;
+        }else{
+            if (x >= 0) sign_ = POSITIVE;
+            else sign_ = NEGATIVE;
+            int a = x; // for len
+            int b = x; // for numbers_
+            if (sign_ == NEGATIVE) {
+                a *= -1;
+                b *= -1;
+            }
 
-        length_ = 0;
-        while (a > 0) {
-            a /= 10;
-            length_ += 1;
-        }
+            length_ = 0;
+            while (a > 0) {
+                a /= 10;
+                length_ += 1;
+            }
 
-        if (numbers_ != nullptr) delete[] numbers_;
-        numbers_ = new int[length_];
+            if (numbers_ != nullptr) delete[] numbers_;
+            numbers_ = new int[length_];
 
-        for (int i = 0; i < length_; i++) {
-            int symb = b % 10;
-            b /= 10;
-            numbers_[length_ - i - 1] = symb;
+            for (int i = 0; i < length_; i++) {
+                int symb = b % 10;
+                b /= 10;
+                numbers_[length_ - i - 1] = symb;
+            }
+            return *this;
         }
-        return *this;
     }
 
     LongNumber &LongNumber::operator=(const LongNumber &x) {
@@ -229,51 +240,59 @@ namespace IBusko {
     }
 
     LongNumber LongNumber::operator+(const LongNumber &x) {
-        LongNumber result;
 
-        if(*this == x && x == LongNumber("0")) return result; // check for 0 + 0
+
 
         if (this->sign_ == x.sign_) {
+            LongNumber result;
+            if(*this == x && x == LongNumber("0")) {
+                result = 0;
+                return result; // check for 0 + 0
+
+            }else{
+                result.sign_ = this->sign_;
+                int longest_len = (this->length_ > x.length_) ? (this->length_) : (x.length_);
+                result.length_ = longest_len + 1;
+                result.numbers_ = new int[result.length_]; // FIXME MEM LEAKS SOMEWHERE!
 
 
-            result.sign_ = this->sign_;
-            int longest_len = (this->length_ > x.length_) ? (this->length_) : (x.length_);
-            result.length_ = longest_len + 1;
-            result.numbers_ = new int[result.length_]; // FIXME MEM LEAKS SOMEWHERE!
+                int i_a = this->length_ - 1, i_b = x.length_ - 1, i_r = result.length_ - 1;
+                for (int i = 0; i < result.length_; i++) {
+                    int a = 0, b = 0;
+                    if (i_a >= 0) a = this->numbers_[i_a];
+                    if (i_b >= 0) b = x.numbers_[i_b];
 
+                    int suma = a + b;
+                    if (suma / 10 > 0) result.numbers_[i_r - 1] += 1;
+                    result.numbers_[i_r] += suma % 10;
+                    if (result.numbers_[i_r] >= 10) {
+                        result.numbers_[i_r] %= 10;
+                        result.numbers_[i_r - 1] += 1;
+                    }
 
-            int i_a = this->length_ - 1, i_b = x.length_ - 1, i_r = result.length_ - 1;
-            for (int i = 0; i < result.length_; i++) {
-                int a = 0, b = 0;
-                if (i_a >= 0) a = this->numbers_[i_a];
-                if (i_b >= 0) b = x.numbers_[i_b];
-
-                int suma = a + b;
-                if (suma / 10 > 0) result.numbers_[i_r - 1] += 1;
-                result.numbers_[i_r] += suma % 10;
-                if (result.numbers_[i_r] >= 10) {
-                    result.numbers_[i_r] %= 10;
-                    result.numbers_[i_r - 1] += 1;
+                    i_a -= 1;
+                    i_b -= 1;
+                    i_r -= 1;
                 }
 
-                i_a -= 1;
-                i_b -= 1;
-                i_r -= 1;
-            }
-            // Обрезка ведущего нуля
-            if (result.numbers_[0] == 0) {
 
-                LongNumber result_2;
-                result_2.length_ = result.length_ - 1;
-                result_2.sign_ = result.sign_;
-                for (int i = 0; i < result_2.length_; i++) {
-                    result_2.numbers_[i] = result.numbers_[i + 1];
+                // Обрезка ведущего нуля
+
+                if (result.numbers_[0] == 0) {
+
+                    LongNumber result_2;
+                    result_2.length_ = result.length_ - 1;
+                    result_2.sign_ = result.sign_;
+                    result_2.numbers_ = new int[result_2.length_];
+                    for (int i = 0; i < result_2.length_; i++) {
+                        result_2.numbers_[i] = result.numbers_[i + 1];
+                    }
+
+                    return result_2;
                 }
 
-                return result_2;
+                return result; // FIXME LEAKS BECAUSE WE CANT DELETE NUMBERS_
             }
-
-            return result; // FIXME LEAKS BECAUSE WE CANT DELETE NUMBERS_
 
         } else {
             LongNumber reversed;
@@ -290,91 +309,97 @@ namespace IBusko {
                 return (x_copy - reversed);
             }
 
+
         }
-        throw "error in +";
-        return result;
     }
 
     LongNumber LongNumber::operator-(const LongNumber &x) {
         LongNumber res;
 
-        if(*this == x) return res; // check for 0 - 0
-        if (x.sign_ == this->sign_) {
-            bool swap_flag = 0;
-            LongNumber a, b; // always a > b
-            if (*this > x) {
+        if(*this == x) {
+            res.length_ = 1;
 
-                a = *this;
-                b = x;
-            } else {
-                a = x;
-                b = *this;
-                swap_flag = 1;
-            }
-
-            res.length_ = a.length_;
             res.sign_ = POSITIVE;
-            res.numbers_ = new int[res.length_];
-
-            int a_i = a.length_ - 1, b_i = b.length_ - 1;
-            for(int i = 0 ; i < b.length_ ; i++){
-                if(a.numbers_[a_i] < 0){
-                    a.numbers_[a_i] += 10;
-                    a.numbers_[a_i - 1] -= 1;
-                }
-
-                if(a.numbers_[a_i] >= b.numbers_[b_i]){
-                    a.numbers_[a_i] = a.numbers_[a_i] - b.numbers_[b_i];
-                }else{
-                    a.numbers_[a_i] = a.numbers_[a_i] - b.numbers_[b_i] + 10;
-                    a.numbers_[a_i - 1] -= 1;
-                }
-
-                a_i -= 1; b_i -= 1;
-            }
-
-            for(int i = 0; i < a.length_; i++){
-                if(a.numbers_[a.length_ - i - 1] < 0){
-                    a.numbers_[a.length_ - i - 1] += 10;
-                    a.numbers_[a.length_ - i - 2] -= 1;
-                }
-            }
-
-            // Обрезка ведущего нуля
-            if (a.numbers_[0] == 0) {
-
-                LongNumber result_2;
-                result_2.length_ = a.length_ - 1;
-                result_2.sign_ = a.sign_;
-                for (int i = 0; i < result_2.length_; i++) {
-                    result_2.numbers_[i] = a.numbers_[i + 1];
-                }
-                a = result_2;
-            }
-
-            // замена знака если изначально this < x
-            if(swap_flag) a.sign_ *= -1;
-            return a;
+            res.numbers_ = new int[1];
+            return res; // check for 0 - 0
         }else{
-            if(*this > x){
-                LongNumber a = x;
-                a.sign_ *= -1;
-                return (*this + a);
-            }else{
-                LongNumber a = *this; // a = -123 x = 23
-                a.sign_ *= -1; // a = 123
-                a = a + x; // a = 123 + 23 = (-123 - 23)*-1
-                a.sign_ *= -1; // a = -146 = (-123 - 23)
+            if (x.sign_ == this->sign_) {
+                bool swap_flag = 0;
+                LongNumber a, b; // always a > b
+                if (*this > x) {
+
+                    a = *this;
+                    b = x;
+                } else {
+                    a = x;
+                    b = *this;
+                    swap_flag = 1;
+                }
+                res.length_ = a.length_;
+                res.sign_ = POSITIVE;
+                res.numbers_ = new int[res.length_];
+
+                int a_i = a.length_ - 1, b_i = b.length_ - 1;
+                for(int i = 0 ; i < b.length_ ; i++){
+                    if(a.numbers_[a_i] < 0){
+                        a.numbers_[a_i] += 10;
+                        a.numbers_[a_i - 1] -= 1;
+                    }
+
+                    if(a.numbers_[a_i] >= b.numbers_[b_i]){
+                        a.numbers_[a_i] = a.numbers_[a_i] - b.numbers_[b_i];
+                    }else{
+                        a.numbers_[a_i] = a.numbers_[a_i] - b.numbers_[b_i] + 10;
+                        a.numbers_[a_i - 1] -= 1;
+                    }
+
+                    a_i -= 1; b_i -= 1;
+                }
+
+                for(int i = 0; i < a.length_; i++){
+                    if(a.numbers_[a.length_ - i - 1] < 0){
+                        a.numbers_[a.length_ - i - 1] += 10;
+                        a.numbers_[a.length_ - i - 2] -= 1;
+                    }
+                }
+
+                // Обрезка ведущего нуля
+                if (a.numbers_[0] == 0) {
+
+                    LongNumber result_2;
+                    result_2.length_ = a.length_ - 1;
+                    result_2.sign_ = a.sign_;
+                    result_2.numbers_ = new int[result_2.length_];
+                    for (int i = 0; i < result_2.length_; i++) {
+                        result_2.numbers_[i] = a.numbers_[i + 1];
+                    }
+                    a = result_2;
+                }
+                // замена знака если изначально this < x
+                if(swap_flag) a.sign_ *= -1;
                 return a;
+            }else{
+                if(*this > x){
+                    LongNumber a = x;
+                    a.sign_ *= -1;
+                    return (*this + a);
+                }else{
+                    LongNumber a = *this; // a = -123 x = 23
+                    a.sign_ *= -1; // a = 123
+                    a = a + x; // a = 123 + 23 = (-123 - 23)*-1
+                    a.sign_ *= -1; // a = -146 = (-123 - 23)
+                    return a;
+                }
             }
+            throw "Something wrong in '-' ";
+            return res;
         }
-        throw "Something wrong in '-' ";
-        return res;
+
     }
 
 
     LongNumber LongNumber::operator*(const LongNumber &x) {
-        LongNumber res;
+        LongNumber res = "0";
         LongNumber a, b;
         if(*this == LongNumber("0") || x == LongNumber("0")) return res; // FIXME ln(0) != ln("0")
 
@@ -396,21 +421,31 @@ namespace IBusko {
 
                 int pr = a.numbers_[a.length_-j-1] * b.numbers_[b_i]; // FIXME переполнение int пр возв в степень 10-ки
                 if(pr == 0) continue;
-
+                //std::cout << std::endl <<  " | A = " << a.numbers_[a.length_-j-1] << " | B = " << b.numbers_[b_i] << " | PR! - " << pr << std::endl;
                 int len_pr = (pr/10 > 0) ? (2 +i+ j) : (1 + i + j);
-                char *pr_step = new char[len_pr];
-                for(int s = 0 ; s < len_pr ; s++) pr_step[s] = static_cast<char>(48);;
+                char *pr_step = new char[len_pr + 1]; // + 1 - for \0
+                for(int s = 0 ; s < len_pr ; s++) pr_step[s] = static_cast<char>(48);
+
                 if(pr/10 != 0){
                     pr_step[0] = static_cast<char>(pr/10 + 48); pr_step[1] = static_cast<char>(pr%10 + 48);
+                    //std::cout << " | YES = " << strlen(pr_step) << std::endl;
                 }else{
                     pr_step[0] = static_cast<char>((pr%10) + 48);
+                    //std::cout << " | NO" << std::endl;
                 }
+                //std::cout << std::endl;
+
+                //std::cout << " | LEN = " << strlen(pr_step) << std::endl;
+                pr_step[len_pr] = '\0';
+
                 res = res + LongNumber(pr_step);
+                //std::cout << " | RES = " << res << std::endl;
                 delete[] pr_step;
             }
-
+            //std::cout << std::endl << "MULTIPLICATION! - " << a << " | " << b << std::endl;
             b_i -=1;
         }
+
         res.sign_ = (this->sign_ * x.sign_ > 0) ? (POSITIVE) : (NEGATIVE);
 
         return res;
@@ -434,7 +469,9 @@ namespace IBusko {
 
     LongNumber LongNumber::operator%(const LongNumber &x) {
         LongNumber result = ("0");
+
         LongNumber del = (*this/x);
+
         result = (*this - (del*x));
 
         // FIXME - understand how we should %, because in C++ (int) -12 % -5 = -2, but
