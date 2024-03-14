@@ -37,15 +37,15 @@ namespace IBusko {
         bool operator>(const LongNumber &x) const; //✅
         bool operator<(const LongNumber &x) const; //✅ // TODO MAKE THEM INLINE
 
-        LongNumber operator+(const LongNumber &x);
+        LongNumber operator+(const LongNumber &x); //✅ // FIXME MEMLEAKS
 
-        LongNumber operator-(const LongNumber &x);
+        LongNumber operator-(const LongNumber &x); //✅
 
-        LongNumber operator*(const LongNumber &x);
+        LongNumber operator*(const LongNumber &x); //✅ // FIXME MEMLEAKS
 
-        LongNumber operator/(const LongNumber &x);
+        LongNumber operator/(const LongNumber &x); //✅
 
-        LongNumber operator%(const LongNumber &x);
+        LongNumber operator%(const LongNumber &x); //✅
 
         int get_digits_number() const;//✅
         bool is_positive() const;//✅
