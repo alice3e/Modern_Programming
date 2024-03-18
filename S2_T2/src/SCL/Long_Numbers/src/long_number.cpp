@@ -124,8 +124,7 @@ namespace IBusko {
         if (sign_ == POSITIVE) {
             for (int i = 0; i < length_; i++) {
                 int x = int(str[i]) - 48;
-                if (x < 0 || x > 9)
-                    throw "Wrong symbol in given string!"; // wil give "libc++abi: terminating due to uncaught exception of type char const*"
+                if (x < 0 || x > 9) throw "Wrong symbol in given string!"; // wil give "libc++abi: terminating due to uncaught exception of type char const*"
                 numbers_[i] = x;
             }
         } else {
@@ -173,6 +172,8 @@ namespace IBusko {
     }
 
     LongNumber &LongNumber::operator=(const LongNumber &x) {
+        if(this == &x) return *this; // in case y = y;
+
         this->length_ = x.length_;
         this->sign_ = x.sign_;
 
@@ -465,7 +466,6 @@ namespace IBusko {
 
         while(res * b < a){
             res = res + 1;
-            //std::cout << "res*b = " << res*b << std::endl;
         }
         if(res*b > a) res = res - 1;
 
