@@ -106,6 +106,8 @@ namespace IBusko {
         if (numbers_ != nullptr){
             delete[] numbers_;
         }
+        length_ = 0;
+        numbers_ = nullptr;
     }
 
     LongNumber &LongNumber::operator=(const char *const str) {
