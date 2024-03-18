@@ -193,6 +193,7 @@ namespace IBusko {
     }
 
     bool LongNumber::operator==(const LongNumber &x) const {
+        if(this->numbers_ == nullptr || x.numbers_== nullptr) throw "Problems with this or x";
         if (this->sign_ == x.sign_ && this->length_ == x.length_) {
             for (int i = 0; i < this->length_; i++) {
                 if (this->numbers_[i] != x.numbers_[i]) {
@@ -205,11 +206,12 @@ namespace IBusko {
     }
 
     bool LongNumber::operator!=(const LongNumber &x) const {
+        if(this->numbers_ == nullptr || x.numbers_== nullptr) throw "Problems with this or x";
         return !(*this == x);
     }
 
     bool LongNumber::operator>(const LongNumber &x) const {
-
+        if(this->numbers_ == nullptr || x.numbers_== nullptr) throw "Problems with this or x";
         if (this->sign_ > x.sign_) return true;
         else if (this->sign_ < x.sign_) return false;
         else {
@@ -229,6 +231,7 @@ namespace IBusko {
     }
 
     bool LongNumber::operator<(const LongNumber &x) const {
+        if(this->numbers_ == nullptr || x.numbers_== nullptr) throw "Problems with this or x";
         if (this->sign_ == x.sign_ && this->length_ == x.length_) {
             bool eq = 1;
             for (int i = 0; i < this->length_; i++) {
@@ -240,8 +243,7 @@ namespace IBusko {
     }
 
     LongNumber LongNumber::operator+(const LongNumber &x) {
-
-
+        if(this->numbers_ == nullptr || x.numbers_== nullptr) throw "Problems with this or x";
 
         if (this->sign_ == x.sign_) {
             LongNumber result;
@@ -314,6 +316,7 @@ namespace IBusko {
     }
 
     LongNumber LongNumber::operator-(const LongNumber &x) {
+        if(this->numbers_ == nullptr || x.numbers_== nullptr) throw "Problems with this or x";
         LongNumber res;
 
         if(*this == x) {
@@ -399,6 +402,7 @@ namespace IBusko {
 
 
     LongNumber LongNumber::operator*(const LongNumber &x) {
+        if(this->numbers_ == nullptr || x.numbers_== nullptr) throw "Problems with this or x";
         LongNumber res = "0";
         LongNumber a, b;
         if(*this == LongNumber("0") || x == LongNumber("0")) return res; // FIXME ln(0) != ln("0")
@@ -452,6 +456,7 @@ namespace IBusko {
     }
 
     LongNumber LongNumber::operator/(const LongNumber &x) {
+        if(this->numbers_ == nullptr || x.numbers_== nullptr) throw "Problems with this or x";
         LongNumber res = "0",a = *this,b = x, counter = "0";
         if(b<0) b.sign_ *= -1;
         if(a<0) a.sign_ *= -1;
@@ -468,6 +473,7 @@ namespace IBusko {
     }
 
     LongNumber LongNumber::operator%(const LongNumber &x) {
+        if(this->numbers_ == nullptr || x.numbers_== nullptr) throw "Problems with this or x";
         LongNumber result = ("0");
 
         LongNumber del = (*this/x);
