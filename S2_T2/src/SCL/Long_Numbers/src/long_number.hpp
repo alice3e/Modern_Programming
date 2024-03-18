@@ -7,7 +7,7 @@
 #include <string>
 
 
-namespace IBusko {
+namespace ASulimov {
     class LongNumber {
         static const char END = '\0';
         static const char MINUS = '-';

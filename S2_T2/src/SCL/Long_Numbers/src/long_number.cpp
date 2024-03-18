@@ -1,7 +1,7 @@
 #include "long_number.hpp"
 
 
-namespace IBusko {
+namespace ASulimov {
     LongNumber::LongNumber() {
         numbers_ = nullptr;
         length_ = 0;
@@ -466,9 +466,7 @@ namespace IBusko {
     LongNumber LongNumber::operator%(const LongNumber &x) {
         if (this->numbers_ == nullptr || x.numbers_ == nullptr) throw "Problems with this or x";
         LongNumber result = ("0");
-
         LongNumber del = (*this / x);
-
         result = (*this - (del * x));
 
         // FIXME - understand how we should %, because in C++ (int) -12 % -5 = -2, but

@@ -5,15 +5,15 @@
 #include "long_number.hpp"
 
 using namespace std;
-typedef IBusko::LongNumber ln;
+typedef ASulimov::LongNumber ln;
 
 // ‼️ leaks -atExit -- build_ninja/SCL/Long_Numbers/main
 // Вставить в терминал и проверить скомпилированный файл на утечки
 
 int main(){
 
-    IBusko::LongNumber one_v1 = "1217654761782467816248764861284618724";
-    IBusko::LongNumber one_v2 = "12176561264871624861284681264876178264871627844761782467816248764861284618724";
+    ASulimov::LongNumber one_v1 = "1217654761782467816248764861284618724";
+    ASulimov::LongNumber one_v2 = "12176561264871624861284681264876178264871627844761782467816248764861284618724";
     cout << " ‼️‼️| " << one_v1  << " | " << one_v2 << " | ‼️‼️" << endl;
     cout << " ‼️‼️| " << (one_v1 * one_v2) << " | ‼️‼️" << endl;
 
