@@ -21,7 +21,7 @@ int main(){
     }
 
     ASulimov::LongNumber res = "0";
-    for(int i = 0; i < 2000; i++){
+    for(int i = 0; i < 2000; i++){x
         res = (res + one_v1);
         res = (res + one_v2);
         one_v2 = one_v2 - 1;
