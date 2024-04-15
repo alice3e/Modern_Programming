@@ -14,7 +14,6 @@ int main(){
 
     ASulimov::LongNumber one_v1 = "1217654761782467816248764861284618724";
     ASulimov::LongNumber one_v2 = "12176561264871624861284681264876178264871627844761782467816248764861284618724";
-
     for(int i = 0; i < 2000; i++){
         ASulimov::LongNumber res = one_v1*one_v2;
         one_v2 = one_v2 - 1;

@@ -36,4 +36,5 @@
 /build_ninja
 .idea
 .DS_Store
-/
+build_ninja/
+cmake-build-debug

@@ -448,7 +448,9 @@ namespace ASulimov {
     }
 
     LongNumber LongNumber::operator/(const LongNumber &x) {
-        if (this->numbers_ == nullptr || x.numbers_ == nullptr) throw "Problems with this or x";
+        if (this->numbers_ == nullptr || x.numbers_ == nullptr || x == 0){
+            throw "Problems with this or x";
+        }
         LongNumber res = "0", a = *this, b = x, counter = "0";
         if (b < 0) b.sign_ *= -1;
         if (a < 0) a.sign_ *= -1;
