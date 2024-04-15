@@ -1,3 +1,0 @@
-/Users/alicee/Desktop/конспекты/Современное_программирование/Menu_Task_exam/cmake-build-debug/CMakeFiles/Menu_Task.dir
-/Users/alicee/Desktop/конспекты/Современное_программирование/Menu_Task_exam/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/alicee/Desktop/конспекты/Современное_программирование/Menu_Task_exam/cmake-build-debug/CMakeFiles/rebuild_cache.dir
