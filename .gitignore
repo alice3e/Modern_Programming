@@ -165,3 +165,4 @@ build.ninja
 # Misc
 compile_commands.json
 
+.DS_Store
